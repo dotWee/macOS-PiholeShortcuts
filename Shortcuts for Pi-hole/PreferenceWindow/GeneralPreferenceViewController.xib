@@ -54,13 +54,16 @@
                             </textField>
                         </gridCell>
                         <gridCell row="UJO-yt-0uO" column="wMr-3w-AnY" id="AoT-zn-qXK">
-                            <textField key="contentView" verticalHuggingPriority="750" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-fP-83G" userLabel="HostAddressTextField">
-                                <rect key="frame" x="106" y="111" width="154" height="23"/>
+                            <textField key="contentView" verticalHuggingPriority="750" ambiguous="YES" preferredMaxLayoutWidth="120" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-fP-83G" userLabel="HostAddressTextField">
+                                <rect key="frame" x="106" y="111" width="100" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="0.0.0.0" drawsBackground="YES" usesSingleLineMode="YES" id="Dsr-N3-iDw">
                                     <font key="font" usesAppearanceFont="YES"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="hostAddressActionHandler:" target="-2" id="uuE-jW-mzy"/>
+                                </connections>
                             </textField>
                         </gridCell>
                         <gridCell row="zDd-dF-Pc1" column="gp3-fW-9CE" id="6yx-92-5pk">
@@ -74,14 +77,17 @@
                             </textField>
                         </gridCell>
                         <gridCell row="zDd-dF-Pc1" column="wMr-3w-AnY" id="hzV-Et-nSb">
-                            <textField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XFe-z6-xSF" userLabel="HostPortTextField">
-                                <rect key="frame" x="106" y="77" width="154" height="20"/>
+                            <textField key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XFe-z6-xSF" userLabel="HostPortTextField">
+                                <rect key="frame" x="106" y="77" width="100" height="20"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="80" drawsBackground="YES" id="NEm-Zd-4ON" userLabel="Host Port">
                                     <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="VWh-xI-DWT"/>
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="hostPortActionHandler:" target="-2" id="YYY-14-4I4"/>
+                                </connections>
                             </textField>
                         </gridCell>
                         <gridCell row="1rw-8c-ZIf" column="gp3-fW-9CE" id="fxG-ia-rJN">
@@ -107,6 +113,9 @@
                                         </items>
                                     </menu>
                                 </popUpButtonCell>
+                                <connections>
+                                    <action selector="requestProtocolActionHandler:" target="-2" id="CMx-RK-GYV"/>
+                                </connections>
                             </popUpButton>
                         </gridCell>
                         <gridCell row="HRH-NI-lOt" column="gp3-fW-9CE" id="3NZ-tO-FyJ">
@@ -120,8 +129,8 @@
                             </textField>
                         </gridCell>
                         <gridCell row="HRH-NI-lOt" column="wMr-3w-AnY" id="ZrY-KK-Dgd">
-                            <secureTextField key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="REb-5L-C55" userLabel="ApiKeySecureTextField">
-                                <rect key="frame" x="106" y="4" width="154" height="23"/>
+                            <secureTextField key="contentView" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REb-5L-C55" userLabel="ApiKeySecureTextField">
+                                <rect key="frame" x="106" y="4" width="100" height="23"/>
                                 <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="z85-Fu-454">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -130,6 +139,9 @@
                                         <string>NSAllRomanInputSourcesLocaleIdentifier</string>
                                     </allowedInputSourceLocales>
                                 </secureTextFieldCell>
+                                <connections>
+                                    <action selector="apiKeyActionHandler:" target="-2" id="79B-Ic-78U"/>
+                                </connections>
                             </secureTextField>
                         </gridCell>
                     </gridCells>

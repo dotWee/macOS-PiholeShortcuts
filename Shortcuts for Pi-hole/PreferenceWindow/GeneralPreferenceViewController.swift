@@ -13,6 +13,29 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
     let toolbarItemTitle: String = "General"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
     
+    @IBAction func hostAddressActionHandler(_ sender: NSTextField) {
+        let hostAddress = sender.stringValue
+        print("hostAddressActionHandler", hostAddress)
+        GeneralPreferences.saveHostAddress(hostAddress: hostAddress)
+    }
+    
+    @IBAction func hostPortActionHandler(_ sender: NSTextField) {
+        let hostPort = sender.stringValue
+        print("hostPortActionHandler", hostPort)
+        GeneralPreferences.saveHostPort(hostPort: hostPort)
+    }
+    
+    @IBAction func requestProtocolActionHandler(_ sender: NSPopUpButton) {
+        let requestProtocol = sender.titleOfSelectedItem!
+        print("requestProtocolActionHandler", requestProtocol)
+        GeneralPreferences.saveRequestProtocol(requestProtocol: requestProtocol)
+    }
+    @IBAction func apiKeyActionHandler(_ sender: NSSecureTextField) {
+        let apiKey = sender.stringValue
+        print("apiKeyActionHandler", apiKey)
+        GeneralPreferences.saveApiKey(apiKey: apiKey)
+    }
+    
     override var nibName: NSNib.Name? {
         return "GeneralPreferenceViewController"
     }

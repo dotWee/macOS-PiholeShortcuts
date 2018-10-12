@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		803305682171427400132604 /* GeneralPreferenceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 803305672171427400132604 /* GeneralPreferenceViewController.xib */; };
 		8033056A2171429100132604 /* GeneralPreferenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803305692171429100132604 /* GeneralPreferenceViewController.swift */; };
+		8033056C217152AE00132604 /* GeneralPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033056B217152AE00132604 /* GeneralPreferences.swift */; };
 		804E3D5021713D1400BD1DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */; };
 		804E3D5221713D1500BD1DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804E3D5121713D1500BD1DA0 /* Assets.xcassets */; };
 		804E3D5521713D1500BD1DA0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 804E3D5321713D1500BD1DA0 /* MainMenu.xib */; };
@@ -21,6 +22,7 @@
 		74562D576827A7D15A133C16 /* Pods-Shortcuts for Pi-hole.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shortcuts for Pi-hole.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shortcuts for Pi-hole/Pods-Shortcuts for Pi-hole.debug.xcconfig"; sourceTree = "<group>"; };
 		803305672171427400132604 /* GeneralPreferenceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GeneralPreferenceViewController.xib; sourceTree = "<group>"; };
 		803305692171429100132604 /* GeneralPreferenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferenceViewController.swift; sourceTree = "<group>"; };
+		8033056B217152AE00132604 /* GeneralPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferences.swift; sourceTree = "<group>"; };
 		804E3D4C21713D1400BD1DA0 /* Shortcuts for Pi-hole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shortcuts for Pi-hole.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		804E3D5121713D1500BD1DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				803305672171427400132604 /* GeneralPreferenceViewController.xib */,
 				803305692171429100132604 /* GeneralPreferenceViewController.swift */,
+				8033056B217152AE00132604 /* GeneralPreferences.swift */,
 			);
 			path = PreferenceWindow;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8033056C217152AE00132604 /* GeneralPreferences.swift in Sources */,
 				8033056A2171429100132604 /* GeneralPreferenceViewController.swift in Sources */,
 				804E3D5021713D1400BD1DA0 /* AppDelegate.swift in Sources */,
 			);

@@ -9,7 +9,7 @@
 import Cocoa
 
 struct GeneralPreferences {
-    static let (hostAddressKey, hostPortKey, requestProtocolKey, apiKey) = ("HOST_ADDRESS", "HOST_PORT", "REQUEST_PROTOCOL", "API_KEY")
+    static let (hostAddressKey, hostPortKey, requestProtocolKey, apiKey, timeoutKey) = ("HOST_ADDRESS", "HOST_PORT", "REQUEST_PROTOCOL", "API_KEY", "REQUEST_TIMEOUT")
     static let userSessionKey = Bundle.main.bundleIdentifier!
     
     struct Model {
@@ -17,12 +17,14 @@ struct GeneralPreferences {
         var hostPort: String?
         var requestProtocol: String?
         var apiKey: String?
+        var timeout: String?
         
         init(_ json: [String: String]) {
             self.hostAddress = json[GeneralPreferences.hostAddressKey]
             self.hostPort = json[GeneralPreferences.hostPortKey]
             self.requestProtocol = json[GeneralPreferences.requestProtocolKey]
             self.apiKey = json[GeneralPreferences.apiKey]
+            self.timeout = json[GeneralPreferences.timeoutKey]
         }
     }
     
@@ -54,6 +56,10 @@ struct GeneralPreferences {
         return Int(hostPort) != nil
     }
     
+    static func isTimeoutValid() -> Bool {
+        return getTimeout() > 0
+    }
+    
     static func getHostAddress() -> String? {
         return UserDefaults.standard.string(forKey: GeneralPreferences.hostAddressKey)
     }
@@ -80,6 +86,10 @@ struct GeneralPreferences {
         return UserDefaults.standard.string(forKey: GeneralPreferences.apiKey) ?? ""
     }
     
+    static func getTimeout() -> Double {
+        return UserDefaults.standard.double(forKey: GeneralPreferences.timeoutKey)
+    }
+    
     static func saveHostAddress(hostAddress: String) {
         UserDefaults.standard.set(hostAddress, forKey: GeneralPreferences.hostAddressKey)
     }
@@ -96,7 +106,11 @@ struct GeneralPreferences {
         UserDefaults.standard.set(apiKey, forKey: GeneralPreferences.apiKey)
     }
     
-    static var savePreferences = { (hostAddress: String, hostPort: String, requestProtocol: String, apiKey: String) in UserDefaults.standard.set([GeneralPreferences.hostAddressKey: hostAddress, GeneralPreferences.hostPortKey: hostPort, GeneralPreferences.requestProtocolKey: requestProtocol, GeneralPreferences.apiKey: apiKey], forKey: GeneralPreferences.userSessionKey)
+    static func saveTimeout(timeout: Double) {
+        UserDefaults.standard.set(timeout, forKey: GeneralPreferences.timeoutKey)
+    }
+    
+    static var savePreferences = { (hostAddress: String, hostPort: String, requestProtocol: String, apiKey: String, timeout: Int) in UserDefaults.standard.set([GeneralPreferences.hostAddressKey: hostAddress, GeneralPreferences.hostPortKey: hostPort, GeneralPreferences.requestProtocolKey: requestProtocol, GeneralPreferences.apiKey: apiKey, GeneralPreferences.timeoutKey: timeout], forKey: GeneralPreferences.userSessionKey)
     }
     
     static var getPreferences = { _ -> Model in

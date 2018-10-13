@@ -19,6 +19,7 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
     @IBOutlet weak var textFieldHostAddress: NSTextField!
     @IBOutlet weak var viewCircleConnectionStatus: ColoredStatusView!
     @IBOutlet weak var textFieldConnectionStatus: NSTextField!
+    @IBOutlet weak var textFieldTimeout: NSTextField!
     
     @IBAction func hostAddressActionHandler(_ sender: NSTextField) {
         let hostAddress = sender.stringValue
@@ -81,6 +82,13 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
         let apiKey = sender.stringValue
         print("apiKeyActionHandler", apiKey)
         GeneralPreferences.saveApiKey(apiKey: apiKey)
+        
+        self.onPreferencesChange()
+    }
+    @IBAction func timeoutActionHandler(_ sender: NSTextField) {
+        let timeout = sender.doubleValue
+        print("timeoutActionHandler", timeout)
+        GeneralPreferences.saveTimeout(timeout: timeout)
         
         self.onPreferencesChange()
     }

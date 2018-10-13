@@ -64,6 +64,11 @@ class PiHoleProxy: NSObject {
             return ConnectionStatus(message: "Invalid API Key", color: NSColor.red)
         }
         
+        // check if timeout is valid
+        if (!GeneralPreferences.isTimeoutValid()) {
+            return ConnectionStatus(message: "Invalid Timeout Value", color: NSColor.red)
+        }
+        
         // define url on possible host
         if (getBaseUrl() == nil) {
             return ConnectionStatus(message: "Invalid URL", color: NSColor.yellow)
@@ -75,10 +80,11 @@ class PiHoleProxy: NSObject {
     
     public static func getDefaultURLSession() -> URLSession {
         let config = URLSessionConfiguration.default
+        let timeout = GeneralPreferences.getTimeout()
         
         // timeout 2s
-        config.timeoutIntervalForRequest = 5
-        config.timeoutIntervalForResource = 5
+        config.timeoutIntervalForRequest = timeout
+        config.timeoutIntervalForResource = timeout
         
         return URLSession(configuration: config)
     }

@@ -26,6 +26,60 @@ struct GeneralPreferences {
         }
     }
     
+    static func isHostAddressValid() -> Bool {
+        if let hostAddress = UserDefaults.standard.string(forKey: GeneralPreferences.hostAddressKey), !hostAddress.isEmpty {
+            // it's not nil nor an empty string
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func isRequestProtocolValid() -> Bool {
+        let requestProtocol = getRequestProtocol()
+        return requestProtocol == "http" || requestProtocol == "https"
+    }
+    
+    static func isApiKeyValid() -> Bool {
+        if let apiKey = UserDefaults.standard.string(forKey: GeneralPreferences.apiKey), !apiKey.isEmpty {
+            // it's not nil nor an empty string
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func isHostPortValid() -> Bool {
+        let hostPort = getHostPort()
+        return Int(hostPort) != nil
+    }
+    
+    static func getHostAddress() -> String? {
+        return UserDefaults.standard.string(forKey: GeneralPreferences.hostAddressKey)
+    }
+    
+    static func getHostPort() -> String {
+        if let hostPort = UserDefaults.standard.string(forKey: GeneralPreferences.hostPortKey), !hostPort.isEmpty {
+            // it's not nil nor an empty string
+            return hostPort
+        }
+        
+        return "80"
+    }
+    
+    static func getRequestProtocol() -> String {
+        if let requestProtocol = UserDefaults.standard.string(forKey: GeneralPreferences.requestProtocolKey), !requestProtocol.isEmpty {
+            // it's not nil nor an empty string
+            return requestProtocol
+        }
+        
+        return "http"
+    }
+    
+    static func getApiKey() -> String {
+        return UserDefaults.standard.string(forKey: GeneralPreferences.apiKey) ?? ""
+    }
+    
     static func saveHostAddress(hostAddress: String) {
         UserDefaults.standard.set(hostAddress, forKey: GeneralPreferences.hostAddressKey)
     }

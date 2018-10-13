@@ -171,7 +171,7 @@
                         <gridCell row="d8f-va-L7K" column="IQs-V1-qYY" id="H4p-7x-Rgs">
                             <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cye-w1-IP2" userLabel="StatusMessageTextField">
                                 <rect key="frame" x="54" y="2" width="272" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" alignment="right" title="Status" id="Uf8-5O-sCu">
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" continuous="YES" alignment="right" id="Uf8-5O-sCu">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

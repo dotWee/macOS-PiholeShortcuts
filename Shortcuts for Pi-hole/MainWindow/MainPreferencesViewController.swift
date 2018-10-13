@@ -7,18 +7,17 @@
 //
 
 import Cocoa
-import Preferences
 
-final class GeneralPreferenceViewController: NSViewController, Preferenceable {
-    let toolbarItemTitle: String = "General"
-    let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
-    
+final class MainPreferencesViewController: NSViewController {
     @IBOutlet weak var secureTextFieldApiKey: NSSecureTextField!
     @IBOutlet weak var popUpButtonRequestProtocol: NSPopUpButton!
+    
     @IBOutlet weak var textFieldHostPort: NSTextField!
     @IBOutlet weak var textFieldHostAddress: NSTextField!
+    
     @IBOutlet weak var viewCircleConnectionStatus: ColoredStatusView!
-    @IBOutlet weak var textFieldConnectionStatus: NSTextField!
+    
+    @IBOutlet weak var labelConnectionStatus: NSTextField!
     @IBOutlet weak var textFieldTimeout: NSTextField!
     
     @IBAction func hostAddressActionHandler(_ sender: NSTextField) {
@@ -95,16 +94,12 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
     
     func onConnectionStatusChange(status: ConnectionStatus) {
         self.viewCircleConnectionStatus.updateFillingColor(color: status.color)
-        self.textFieldConnectionStatus.stringValue = status.message
+        self.labelConnectionStatus.stringValue = status.message
     }
     
     func onPreferencesChange() {
         let connectionStatus = PiHoleProxy.getConfigStatus()
         self.onConnectionStatusChange(status: connectionStatus)
-    }
-    
-    override var nibName: NSNib.Name? {
-        return "GeneralPreferenceViewController"
     }
     
     override func viewDidLoad() {

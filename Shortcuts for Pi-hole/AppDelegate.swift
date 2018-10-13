@@ -16,12 +16,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     static let menuItemEnable = NSMenuItem(title: "Enable", action: #selector(AppDelegate.menuItemEnableActionHandler(_:)), keyEquivalent: "E", isEnabled: true)
     @objc func menuItemEnableActionHandler(_ sender: Any?) {
-        
+        PiHoleProxy.performActionRequest(PiHoleAction.Enable, onSuccess: { (status) in
+            print("menuItemEnableActionHandler: STATUS " + status)
+        }) { (error) in
+            print("menuItemEnableActionHandler: ERROR " + (error?.localizedDescription)!)
+        }
     }
     
     static let menuItemDisable = NSMenuItem(title: "Disable", action: #selector(AppDelegate.menuItemDisableActionHandler(_:)), keyEquivalent: "D", isEnabled: true)
     @objc func menuItemDisableActionHandler(_ sender: Any?) {
-        
+        PiHoleProxy.performActionRequest(PiHoleAction.Disable, onSuccess: { (status) in
+            print("menuItemDisableActionHandler: STATUS " + status)
+        }) { (error) in
+            print("menuItemDisableActionHandler: ERROR " + (error?.localizedDescription)!)
+        }
     }
     
     static let menuItemPreferences = NSMenuItem(title: "Preferences", action: #selector(AppDelegate.menuItemPreferenceActionHandler(_:)), keyEquivalent: "P", isEnabled: true)

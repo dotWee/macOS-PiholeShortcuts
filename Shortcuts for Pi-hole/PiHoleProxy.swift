@@ -18,15 +18,28 @@ struct ConnectionStatus {
     }
 }
 
+enum PiHoleAction {
+    case Status
+    case Enable
+    case Disable
+}
+
 class PiHoleProxy: NSObject {
     
-    public static func getBaseUrl() -> URL? {
+    public static func getBaseUrl(action: PiHoleAction = PiHoleAction.Status) -> URL? {
         let hostAddress = GeneralPreferences.getHostAddress()
         let hostPort = GeneralPreferences.getHostPort()
         let requestProtocol = GeneralPreferences.getRequestProtocol()
         let apiKey = GeneralPreferences.getApiKey()
         
-        let urlString = requestProtocol + "://" + hostAddress! + ":" + hostPort + "/admin/api.php?auth=" + apiKey
+        var urlString = requestProtocol + "://" + hostAddress! + ":" + hostPort + "/admin/api.php?auth=" + apiKey
+        
+        if (action == PiHoleAction.Enable) {
+            urlString = urlString + "&enable"
+        } else if (action == PiHoleAction.Disable) {
+            urlString = urlString + "&disable"
+        }
+        
         return URL(string: urlString)
     }
     
@@ -70,35 +83,29 @@ class PiHoleProxy: NSObject {
         return URLSession(configuration: config)
     }
     
-    public static func performPiRequest(_ endpoint: String, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: Error?, _ endpoint: String) -> Void) {
-        print("performPiRequest: endpoint=" + endpoint)
+    public static func performActionRequest(_ action: PiHoleAction, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: Error?) -> Void) {
         
         do {
-            guard let url = URL(string: endpoint) else {
-                failure(NSError(domain: "Error invalid endpoint", code: 1, userInfo: nil), endpoint)
+            guard let url = getBaseUrl(action: action) else {
+                failure(NSError(domain: "Error invalid endpoint", code: 1, userInfo: nil))
                 return
             }
             
             let urlRequest = URLRequest(url: url)
-            
-            let config = URLSessionConfiguration.default
-            config.timeoutIntervalForRequest = 5
-            config.timeoutIntervalForResource = 5
-            
-            let session = URLSession(configuration: config)
+            let session = getDefaultURLSession()
             
             let task = session.dataTask(with: urlRequest) {
                 (data, response, error) in
                 
                 // Check for any errors
                 guard error == nil else {
-                    failure(NSError(domain: "Error at executing request (timeout)", code: 2, userInfo: nil), endpoint)
+                    failure(NSError(domain: "Error at executing request (timeout)", code: 2))
                     return
                 }
                 
                 // Make sure we got data
                 guard let responseData = data else {
-                    failure(NSError(domain: "Error at reading response", code: 3, userInfo: nil), endpoint)
+                    failure(NSError(domain: "Error at reading response", code: 3, userInfo: nil))
                     return
                 }
                 
@@ -106,19 +113,19 @@ class PiHoleProxy: NSObject {
                 do {
                     guard let responseObj = try JSONSerialization.jsonObject(with: responseData, options: [])
                         as? [String: Any] else {
-                            failure(NSError(domain: "Error converting response to JSON", code: 4, userInfo: nil), endpoint)
+                            failure(NSError(domain: "Error converting response to JSON", code: 4, userInfo: nil))
                             return
                     }
                     
                     // The response object is a dictionary so we just access the title using the "status" key
                     guard let status = responseObj["status"] as? String else {
-                        failure(NSError(domain: "Error getting status from response", code: 5, userInfo: nil), endpoint)
+                        failure(NSError(domain: "Error getting status from response", code: 5, userInfo: nil))
                         return
                     }
                     
                     success(status)
                 } catch  {
-                    failure(NSError(domain: "Error at converting response into JSON", code: 6, userInfo: nil), endpoint)
+                    failure(NSError(domain: "Error at converting response into JSON", code: 6, userInfo: nil))
                     return
                 }
             }

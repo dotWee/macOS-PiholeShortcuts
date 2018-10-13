@@ -13,30 +13,6 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
     let toolbarItemTitle: String = "General"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
     
-    override func viewDidAppear() {
-        
-        // restore persisted preferences in view
-        if let hostAddress = GeneralPreferences.getHostAddress(), !hostAddress.isEmpty {
-            textFieldHostAddress.stringValue = hostAddress
-        }
-        
-        let hostPort = GeneralPreferences.getHostPort()
-        if !hostPort.isEmpty {
-            textFieldHostPort.stringValue = hostPort
-        }
-        
-        let requestProtocol = GeneralPreferences.getRequestProtocol()
-        popUpButtonRequestProtocol.selectItem(withTitle: requestProtocol)
-        
-        let apiKey = GeneralPreferences.getApiKey()
-        if !apiKey.isEmpty {
-            secureTextFieldApiKey.stringValue = apiKey
-        }
-        
-        // check status
-        self.onPreferencesChange()
-    }
-    
     @IBOutlet weak var secureTextFieldApiKey: NSSecureTextField!
     @IBOutlet weak var popUpButtonRequestProtocol: NSPopUpButton!
     @IBOutlet weak var textFieldHostPort: NSTextField!
@@ -126,6 +102,25 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Setup stuff here
+        // restore persisted preferences in view
+        if let hostAddress = GeneralPreferences.getHostAddress(), !hostAddress.isEmpty {
+            textFieldHostAddress.stringValue = hostAddress
+        }
+        
+        let hostPort = GeneralPreferences.getHostPort()
+        if !hostPort.isEmpty {
+            textFieldHostPort.stringValue = hostPort
+        }
+        
+        let requestProtocol = GeneralPreferences.getRequestProtocol()
+        popUpButtonRequestProtocol.selectItem(withTitle: requestProtocol)
+        
+        let apiKey = GeneralPreferences.getApiKey()
+        if !apiKey.isEmpty {
+            secureTextFieldApiKey.stringValue = apiKey
+        }
+        
+        // check status
+        self.onPreferencesChange()
     }
 }

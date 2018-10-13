@@ -12,12 +12,7 @@ import Preferences
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    static let menuItems = [AppDelegate.menuItemStatus, AppKit.NSMenuItem.separator(), AppDelegate.menuItemEnable, AppDelegate.menuItemDisable, AppKit.NSMenuItem.separator(), AppDelegate.menuItemPreferences, AppKit.NSMenuItem.separator(), AppDelegate.menuItemQuit]
-    
-    static let menuItemStatus = NSMenuItem(title: "Status", action: nil, keyEquivalent: "", isEnabled: false)
-    @objc func menuItemStatusActionHandler(_ sender: Any?) {
-        
-    }
+    static let menuItems = [AppDelegate.menuItemEnable, AppDelegate.menuItemDisable, AppKit.NSMenuItem.separator(), AppDelegate.menuItemPreferences, AppKit.NSMenuItem.separator(), AppDelegate.menuItemQuit]
     
     static let menuItemEnable = NSMenuItem(title: "Enable", action: #selector(AppDelegate.menuItemEnableActionHandler(_:)), keyEquivalent: "E", isEnabled: true)
     @objc func menuItemEnableActionHandler(_ sender: Any?) {

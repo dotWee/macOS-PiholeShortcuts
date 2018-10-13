@@ -63,22 +63,24 @@ final class GeneralPreferenceViewController: NSViewController, Preferenceable {
         
         let task = PiHoleProxy.getDefaultURLSession().dataTask(with: url) { (data, response, error) in
             print("dataTask on " + url.absoluteString)
-            if (error != nil) {
-                self.onConnectionStatusChange(status: ConnectionStatus(message: "Request Error " + error.debugDescription, color: NSColor.red))
-                return;
-            }
             
-            if let httpResponse = response as? HTTPURLResponse {
+            let connectionStatus: ConnectionStatus;
+            if (error != nil) {
+                connectionStatus = ConnectionStatus(message: error!.localizedDescription, color: NSColor.red)
+            } else if let httpResponse = response as? HTTPURLResponse {
                 let statusCode = httpResponse.statusCode
                 print("status code " + String(describing: statusCode) + " on host " + (url.absoluteString))
                 
-                if (statusCode == 200) {
-                    self.onConnectionStatusChange(status: ConnectionStatus(message: "Connection established", color: NSColor.green))
-                } else {
-                    self.onConnectionStatusChange(status: ConnectionStatus(message: "Host returned unsuccessful response", color: NSColor.red))
-                }
+                connectionStatus = ConnectionStatus(
+                    message: (statusCode == 200) ? "Connection established" : "Host returned invalid response",
+                    color: (statusCode == 200) ? NSColor.green : NSColor.red)
             } else {
-                self.onConnectionStatusChange(status: ConnectionStatus(message: "Host returned invalid response", color: NSColor.red))
+                connectionStatus = ConnectionStatus(message: "Host returned invalid response", color: NSColor.red)
+            }
+            
+            DispatchQueue.main.async {
+                print(connectionStatus.message)
+                self.onConnectionStatusChange(status: connectionStatus)
             }
         }
         task.resume()

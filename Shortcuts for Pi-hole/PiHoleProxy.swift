@@ -57,7 +57,7 @@ class PiHoleProxy: NSObject {
         }
         
         // config looks good!
-        return ConnectionStatus(message: "Configuration is valid", color: NSColor.green)
+        return ConnectionStatus(message: "Configuration looks valid", color: NSColor.green)
     }
     
     public static func getDefaultURLSession() -> URLSession {

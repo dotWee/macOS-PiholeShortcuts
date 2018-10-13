@@ -55,7 +55,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		803305662171425000132604 /* PreferenceWindow */ = {
+		803305662171425000132604 /* GeneralPreferences */ = {
 			isa = PBXGroup;
 			children = (
 				803305672171427400132604 /* GeneralPreferenceViewController.xib */,
@@ -63,7 +63,7 @@
 				8033056B217152AE00132604 /* GeneralPreferences.swift */,
 				8033056F2171796B00132604 /* PiHoleProxy.swift */,
 			);
-			path = PreferenceWindow;
+			path = GeneralPreferences;
 			sourceTree = "<group>";
 		};
 		804E3D4321713D1400BD1DA0 = {
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				803305712171882E00132604 /* Shortcuts for Pi-hole.entitlements */,
-				803305662171425000132604 /* PreferenceWindow */,
+				803305662171425000132604 /* GeneralPreferences */,
 				804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */,
 				804E3D5121713D1500BD1DA0 /* Assets.xcassets */,
 				804E3D5321713D1500BD1DA0 /* MainMenu.xib */,

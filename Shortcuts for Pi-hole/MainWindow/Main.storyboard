@@ -30,10 +30,10 @@
         <scene sceneID="jRC-CW-6PB">
             <objects>
                 <customObject id="T1c-uq-EGA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <tabViewController selectedTabViewItemIndex="1" id="AR0-Gg-BXj" sceneMemberID="viewController">
+                <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="AR0-Gg-BXj" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem identifier="" id="ERZ-Wt-6qQ"/>
-                        <tabViewItem identifier="" id="h6n-mK-PE9"/>
+                        <tabViewItem identifier="" image="NSPreferencesGeneral" id="ERZ-Wt-6qQ" userLabel="Preferences Tab"/>
+                        <tabViewItem identifier="" image="NSNetwork" id="h6n-mK-PE9" userLabel="Connection Tab"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="jRq-rW-ioP">
                         <rect key="frame" x="0.0" y="13" width="488" height="287"/>
@@ -347,7 +347,7 @@
                                     <subviews>
                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rfn-ib-c11" userLabel="Example request url">
                                             <rect key="frame" x="8" y="8" width="264" height="22"/>
-                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="5qq-RQ-3eK">
+                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="5qq-RQ-3eK">
                                                 <font key="font" usesAppearanceFont="YES"/>
                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -451,4 +451,8 @@
             <point key="canvasLocation" x="1380" y="485.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSNetwork" width="128" height="128"/>
+        <image name="NSPreferencesGeneral" width="128" height="128"/>
+    </resources>
 </document>

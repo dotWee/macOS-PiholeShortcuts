@@ -10,17 +10,17 @@ import Cocoa
 
 class ColoredStatusView: NSView {
     var fillingColor: NSColor = NSColor.red
-    
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        
+
         // Drawing code here.
         let fillColor = self.fillingColor
         let path = NSBezierPath(ovalIn: dirtyRect)
         fillColor.setFill()
         path.fill()
     }
-    
+
     public func updateFillingColor(color: NSColor) {
         self.fillingColor = color
         self.display()

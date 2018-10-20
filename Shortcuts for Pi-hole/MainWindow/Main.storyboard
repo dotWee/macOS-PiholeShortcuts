@@ -333,11 +333,11 @@
                 <customObject id="CIJ-Rs-52H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Connection" id="keW-xg-6Mf" userLabel="Connection View Controller" customClass="MainConnectionViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="4Vt-JH-THD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="303"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
                         <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="piL-za-ZqG">
-                                <rect key="frame" x="18" y="265" width="284" height="18"/>
+                                <rect key="frame" x="18" y="312" width="284" height="18"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Example requests on API " id="BHq-cz-zGR">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -345,7 +345,7 @@
                                 </textFieldCell>
                             </textField>
                             <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oN7-NB-Ixd">
-                                <rect key="frame" x="17" y="215" width="286" height="44"/>
+                                <rect key="frame" x="17" y="262" width="286" height="44"/>
                                 <view key="contentView" id="YCs-FU-BAa">
                                     <rect key="frame" x="3" y="3" width="280" height="38"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -371,7 +371,7 @@
                                 </view>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Vc-Ybx">
-                                <rect key="frame" x="18" y="181" width="284" height="18"/>
+                                <rect key="frame" x="18" y="228" width="284" height="18"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Test connection log" id="TGd-wp-jVY">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -379,7 +379,7 @@
                                 </textFieldCell>
                             </textField>
                             <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="D57-Vi-LU6">
-                                <rect key="frame" x="17" y="49" width="286" height="126"/>
+                                <rect key="frame" x="17" y="96" width="286" height="126"/>
                                 <view key="contentView" id="Hki-xr-dyN">
                                     <rect key="frame" x="3" y="3" width="280" height="120"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -419,7 +419,7 @@
                                 </constraints>
                             </box>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Dt-dO-Ie4">
-                                <rect key="frame" x="214" y="5" width="92" height="32"/>
+                                <rect key="frame" x="214" y="52" width="92" height="32"/>
                                 <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EiH-Gq-9CD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -428,32 +428,77 @@
                                     <action selector="connectionButtonActionHandler:" target="keW-xg-6Mf" id="txF-7p-Rvj"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rS1-FB-HMO">
+                                <rect key="frame" x="18" y="13" width="47" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="tvd-1Q-Tgj"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Status:" id="jjU-zs-5lk">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-8d-KKv" customClass="ColoredStatusView" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target">
+                                <rect key="frame" x="280" y="12" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="MDL-Pm-jQI"/>
+                                    <constraint firstAttribute="height" constant="20" id="OTG-m4-PqF"/>
+                                </constraints>
+                            </customView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-WU-rPj">
+                                <rect key="frame" x="176" y="13" width="98" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="Hbd-c7-16n"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Statusmessage" id="EP6-6g-JMN">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-vF-WcE">
+                                <rect key="frame" x="10" y="42" width="300" height="5"/>
+                            </box>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="xkm-vF-WcE" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="10" id="3VP-pG-Pzc"/>
                             <constraint firstAttribute="trailing" secondItem="jfh-Vc-Ybx" secondAttribute="trailing" constant="20" id="3tU-oL-f8Z"/>
                             <constraint firstAttribute="trailing" secondItem="D57-Vi-LU6" secondAttribute="trailing" constant="20" id="6Mj-l1-od4"/>
                             <constraint firstItem="oN7-NB-Ixd" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="Avc-yf-TEJ"/>
+                            <constraint firstItem="rS1-FB-HMO" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="13" id="Ccz-DX-uEf"/>
+                            <constraint firstItem="Yjg-WU-rPj" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="13" id="EEd-Gc-4Ue"/>
+                            <constraint firstAttribute="bottom" secondItem="Yjg-WU-rPj" secondAttribute="bottom" constant="13" id="Hlc-Y6-KhX"/>
+                            <constraint firstItem="rS1-FB-HMO" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="JkR-t7-fgG"/>
+                            <constraint firstAttribute="trailing" secondItem="xkm-vF-WcE" secondAttribute="trailing" constant="10" id="KeV-44-75O"/>
                             <constraint firstItem="D57-Vi-LU6" firstAttribute="top" secondItem="jfh-Vc-Ybx" secondAttribute="bottom" constant="8" id="MrT-6X-j0h"/>
                             <constraint firstItem="piL-za-ZqG" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="RHT-On-xPB"/>
                             <constraint firstAttribute="trailing" secondItem="5Dt-dO-Ie4" secondAttribute="trailing" constant="20" id="T14-Lu-bjJ"/>
                             <constraint firstItem="jfh-Vc-Ybx" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="Twx-aq-ad9"/>
+                            <constraint firstItem="m2Z-8d-KKv" firstAttribute="leading" secondItem="Yjg-WU-rPj" secondAttribute="trailing" constant="8" id="VEn-xt-Qna"/>
+                            <constraint firstAttribute="trailing" secondItem="m2Z-8d-KKv" secondAttribute="trailing" constant="20" id="VId-of-FQH"/>
                             <constraint firstItem="jfh-Vc-Ybx" firstAttribute="top" secondItem="oN7-NB-Ixd" secondAttribute="bottom" constant="20" id="fd8-SE-xZE"/>
                             <constraint firstItem="piL-za-ZqG" firstAttribute="top" secondItem="4Vt-JH-THD" secondAttribute="top" constant="20" id="hO8-vk-7M8"/>
                             <constraint firstAttribute="trailing" secondItem="piL-za-ZqG" secondAttribute="trailing" constant="20" id="iT8-Kn-A1E"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="5Dt-dO-Ie4" secondAttribute="bottom" constant="12" id="ii8-Nz-SHg"/>
+                            <constraint firstAttribute="bottom" secondItem="rS1-FB-HMO" secondAttribute="bottom" constant="13" id="o9R-Gw-6BG"/>
                             <constraint firstItem="oN7-NB-Ixd" firstAttribute="top" secondItem="piL-za-ZqG" secondAttribute="bottom" constant="8" id="p7l-AG-kiz"/>
                             <constraint firstItem="5Dt-dO-Ie4" firstAttribute="top" secondItem="D57-Vi-LU6" secondAttribute="bottom" constant="20" id="r29-kw-F4N"/>
+                            <constraint firstAttribute="bottom" secondItem="m2Z-8d-KKv" secondAttribute="bottom" constant="12" id="rSS-ul-9od"/>
                             <constraint firstItem="D57-Vi-LU6" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="sLN-Lg-MSw"/>
                             <constraint firstAttribute="trailing" secondItem="oN7-NB-Ixd" secondAttribute="trailing" constant="20" id="snL-QB-FOZ"/>
+                            <constraint firstItem="m2Z-8d-KKv" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="12" id="ydL-FW-UJu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="coloredStatusViewOutlet" destination="m2Z-8d-KKv" id="WlW-lO-ug0"/>
                         <outlet property="exampleRequestUrlTextField" destination="Rfn-ib-c11" id="O4S-4Q-hGa"/>
+                        <outlet property="statusMessageLabelOutlet" destination="Yjg-WU-rPj" id="zjX-m7-tY4"/>
                         <outlet property="testConnectionTextView" destination="fvQ-Yr-swL" id="vHd-Cs-NGh"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1380" y="485.5"/>
+            <point key="canvasLocation" x="1380" y="509"/>
         </scene>
     </scenes>
     <resources>

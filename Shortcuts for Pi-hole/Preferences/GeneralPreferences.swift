@@ -52,8 +52,7 @@ struct GeneralPreferences {
     }
     
     static func isHostPortValid() -> Bool {
-        let hostPort = getHostPort()
-        return Int(hostPort) != nil
+        return getHostPort() > 0
     }
     
     static func isTimeoutValid() -> Bool {
@@ -64,13 +63,9 @@ struct GeneralPreferences {
         return UserDefaults.standard.string(forKey: GeneralPreferences.hostAddressKey)
     }
     
-    static func getHostPort() -> String {
-        if let hostPort = UserDefaults.standard.string(forKey: GeneralPreferences.hostPortKey), !hostPort.isEmpty {
-            // it's not nil nor an empty string
-            return hostPort
-        }
-        
-        return "80"
+    static func getHostPort() -> Int {
+        let hostPort = UserDefaults.standard.integer(forKey: GeneralPreferences.hostPortKey)
+        return (hostPort == 0) ? 80 : hostPort
     }
     
     static func getRequestProtocol() -> String {
@@ -86,15 +81,15 @@ struct GeneralPreferences {
         return UserDefaults.standard.string(forKey: GeneralPreferences.apiKey) ?? ""
     }
     
-    static func getTimeout() -> Double {
-        return UserDefaults.standard.double(forKey: GeneralPreferences.timeoutKey)
+    static func getTimeout() -> Int {
+        return UserDefaults.standard.integer(forKey: GeneralPreferences.timeoutKey)
     }
     
     static func saveHostAddress(hostAddress: String) {
         UserDefaults.standard.set(hostAddress, forKey: GeneralPreferences.hostAddressKey)
     }
     
-    static func saveHostPort(hostPort: String) {
+    static func saveHostPort(hostPort: Int) {
         UserDefaults.standard.set(hostPort, forKey: GeneralPreferences.hostPortKey)
     }
     
@@ -106,7 +101,7 @@ struct GeneralPreferences {
         UserDefaults.standard.set(apiKey, forKey: GeneralPreferences.apiKey)
     }
     
-    static func saveTimeout(timeout: Double) {
+    static func saveTimeout(timeout: Int) {
         UserDefaults.standard.set(timeout, forKey: GeneralPreferences.timeoutKey)
     }
     

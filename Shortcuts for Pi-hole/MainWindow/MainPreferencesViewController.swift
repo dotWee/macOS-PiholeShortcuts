@@ -63,7 +63,7 @@ final class MainPreferencesViewController: NSViewController {
     }
     
     @IBAction func hostPortActionHandler(_ sender: NSTextField) {
-        let hostPort = sender.stringValue
+        let hostPort = sender.integerValue
         print("hostPortActionHandler", hostPort)
         GeneralPreferences.saveHostPort(hostPort: hostPort)
         
@@ -85,7 +85,7 @@ final class MainPreferencesViewController: NSViewController {
         self.onPreferencesChange()
     }
     @IBAction func timeoutActionHandler(_ sender: NSTextField) {
-        let timeout = sender.doubleValue
+        let timeout = sender.integerValue
         print("timeoutActionHandler", timeout)
         GeneralPreferences.saveTimeout(timeout: timeout)
         
@@ -111,9 +111,7 @@ final class MainPreferencesViewController: NSViewController {
         }
         
         let hostPort = GeneralPreferences.getHostPort()
-        if !hostPort.isEmpty {
-            textFieldHostPort.stringValue = hostPort
-        }
+        textFieldHostPort.integerValue = hostPort
         
         let requestProtocol = GeneralPreferences.getRequestProtocol()
         popUpButtonRequestProtocol.selectItem(withTitle: requestProtocol)

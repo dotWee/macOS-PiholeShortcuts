@@ -32,8 +32,10 @@ class PiHoleProxy: NSObject {
         let requestProtocol = GeneralPreferences.getRequestProtocol()
         let apiKey = GeneralPreferences.getApiKey()
         
-        var urlString = requestProtocol + "://" + hostAddress! + ":" + hostPort + "/admin/api.php?auth=" + apiKey
+        let base = requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
+        let path: String = "/admin/api.php?auth=" + apiKey
         
+        var urlString = base + path
         if (action == PiHoleAction.Enable) {
             urlString = urlString + "&enable"
         } else if (action == PiHoleAction.Disable) {
@@ -83,8 +85,8 @@ class PiHoleProxy: NSObject {
         let timeout = GeneralPreferences.getTimeout()
         
         // timeout 2s
-        config.timeoutIntervalForRequest = timeout
-        config.timeoutIntervalForResource = timeout
+        config.timeoutIntervalForRequest = TimeInterval(timeout)
+        config.timeoutIntervalForResource = TimeInterval(timeout)
         
         return URLSession(configuration: config)
     }

@@ -28,40 +28,6 @@ final class MainPreferencesViewController: NSViewController {
         self.onPreferencesChange()
     }
 
-
-    @IBAction func connectButtonActionHandler(_ sender: NSButton) {
-        self.onConnectionStatusChange(status: ConnectionStatus(message: "Requesting...", color: NSColor.gray))
-
-        guard let url = PiHoleProxy.getBaseUrl() else {
-            onConnectionStatusChange(status: ConnectionStatus(message: "Error constructing endpoint", color: NSColor.red))
-            return;
-        }
-
-        let task = PiHoleProxy.getDefaultURLSession().dataTask(with: url) { (data, response, error) in
-            print("dataTask on " + url.absoluteString)
-
-            let connectionStatus: ConnectionStatus;
-            if (error != nil) {
-                connectionStatus = ConnectionStatus(message: error!.localizedDescription, color: NSColor.red)
-            } else if let httpResponse = response as? HTTPURLResponse {
-                let statusCode = httpResponse.statusCode
-                print("status code " + String(describing: statusCode) + " on host " + (url.absoluteString))
-
-                connectionStatus = ConnectionStatus(
-                    message: (statusCode == 200) ? "Connection established" : "Host returned invalid response",
-                    color: (statusCode == 200) ? NSColor.green : NSColor.red)
-            } else {
-                connectionStatus = ConnectionStatus(message: "Host returned invalid response", color: NSColor.red)
-            }
-
-            DispatchQueue.main.async {
-                print(connectionStatus.message)
-                self.onConnectionStatusChange(status: connectionStatus)
-            }
-        }
-        task.resume()
-    }
-
     @IBAction func hostPortActionHandler(_ sender: NSTextField) {
         let hostPort = sender.integerValue
         print("hostPortActionHandler", hostPort)

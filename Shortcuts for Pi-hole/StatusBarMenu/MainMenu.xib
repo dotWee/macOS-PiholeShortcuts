@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="uzQ-Nb-xFI" id="ZrJ-OP-dRu"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="uzQ-Nb-xFI" userLabel="App Delegate" customClass="AppDelegate" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target"/>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="Kpj-0Y-3ml" userLabel="Menu Controller" customClass="MainMenuController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target">
+            <connections>
+                <outlet property="aboutMenuItem" destination="5kV-Vb-QxS" id="M9m-Fj-SHd"/>
+                <outlet property="preferencesMenuItem" destination="BOF-NM-1cW" id="Yn4-2h-baf"/>
+                <outlet property="quitMenuItem" destination="4sb-4s-VLi" id="J0G-im-Y0L"/>
+                <outlet property="statusBarMenu" destination="uQy-DD-JDr" id="isz-qa-GDj"/>
+                <outlet property="statusMenuItem" destination="3Hy-Fi-g4j" id="TmU-J4-Bc9"/>
+            </connections>
+        </customObject>
+        <menu systemMenu="apple" id="uQy-DD-JDr" userLabel="Status Bar Menu">
+            <items>
+                <menuItem title="Pi-hole status:" enabled="NO" id="3Hy-Fi-g4j">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="yOe-Fc-X4s"/>
+                <menuItem title="Enable Filter" id="gul-jW-7CU">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Enable Filter" id="LEA-xg-oLc" userLabel="Enable Filter Menu">
+                        <items>
+                            <menuItem title="For 30 seconds" id="qhE-ut-8lJ">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="For 1 minute" id="GCp-rE-Fgx">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="For 1 hour" id="PXl-FS-Slt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="hGn-zg-60B"/>
+                            <menuItem title="Permanently" id="Sb3-xY-dV3">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="enablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="b20-Y5-DXh"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Disable Filter" id="daG-g1-9wJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Disable Filter" id="6Kp-El-QaK" userLabel="Disable Filter Menu">
+                        <items>
+                            <menuItem title="For 30 seconds" id="dW4-53-1ks">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="For 1 minute" id="aIT-QT-N8H">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="For 1 hour" id="pnR-iX-7T7">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="NfQ-Td-f7i"/>
+                            <menuItem title="Permanently" id="sxK-ZZ-0Q5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="disablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="MV8-B4-OWL"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
+                <menuItem title="About ..." id="5kV-Vb-QxS">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="tQe-C5-w20"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Preferences …" keyEquivalent="," id="BOF-NM-1cW">
+                    <connections>
+                        <action selector="preferencesMenuItemActionHandler:" target="Kpj-0Y-3ml" id="g7E-4x-Z3Z"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
+                <menuItem title="Quit Shortcuts for Pi-hole" keyEquivalent="q" id="4sb-4s-VLi">
+                    <connections>
+                        <action selector="quitMenuItemActionHandler:" target="Kpj-0Y-3ml" id="cDa-i5-ZuL"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="uzQ-Nb-xFI" id="nrU-tf-YG9"/>
+            </connections>
+        </menu>
+    </objects>
+</document>

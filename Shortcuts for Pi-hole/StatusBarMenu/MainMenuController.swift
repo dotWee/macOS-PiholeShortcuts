@@ -19,7 +19,8 @@ class MainMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var quitMenuItem: NSMenuItem!
     
     let mainWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController() as! MainWindowController
-    
+    let aboutWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "AboutWindowControllerIdentifier") as! AboutWindowController
+
     override init() {
         super.init()
     }
@@ -67,7 +68,8 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func aboutMenuItemActionHandler(_ sender: NSMenuItem) {
-        NSApplication.shared.orderFrontStandardAboutPanel()
+        //NSApplication.shared.orderFrontStandardAboutPanel()
+        aboutWindowController.showWindow(self)
     }
     
     @IBAction func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {

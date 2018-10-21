@@ -13,6 +13,8 @@
 		803305702171796B00132604 /* PiHoleProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033056F2171796B00132604 /* PiHoleProxy.swift */; };
 		8046492121725E3A0028E457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8046492021725E3A0028E457 /* Main.storyboard */; };
 		804C398E217C9A2600576BFD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 804C398D217C9A2600576BFD /* Credits.rtf */; };
+		804C3991217CD24700576BFD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3990217CD24700576BFD /* AboutWindowController.swift */; };
+		804C3993217CD6D600576BFD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3992217CD6D600576BFD /* AboutViewController.swift */; };
 		804E3D5021713D1400BD1DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */; };
 		804E3D5221713D1500BD1DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804E3D5121713D1500BD1DA0 /* Assets.xcassets */; };
 		80CA0040217260DA00CC9FB6 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA003F217260DA00CC9FB6 /* MainWindowController.swift */; };
@@ -29,10 +31,12 @@
 		803305692171429100132604 /* MainPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPreferencesViewController.swift; sourceTree = "<group>"; };
 		8033056B217152AE00132604 /* GeneralPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferences.swift; sourceTree = "<group>"; };
 		8033056D2171649C00132604 /* ColoredStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredStatusView.swift; sourceTree = "<group>"; };
-		8033056F2171796B00132604 /* PiHoleProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PiHoleProxy.swift; path = "Shortcuts for Pi-hole/PiHoleProxy.swift"; sourceTree = SOURCE_ROOT; };
+		8033056F2171796B00132604 /* PiHoleProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PiHoleProxy.swift; path = "Shortcuts for Pi-hole/Tools/PiHoleProxy.swift"; sourceTree = SOURCE_ROOT; };
 		803305712171882E00132604 /* Shortcuts for Pi-hole.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Shortcuts for Pi-hole.entitlements"; sourceTree = "<group>"; };
 		8046492021725E3A0028E457 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		804C398D217C9A2600576BFD /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		804C3990217CD24700576BFD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
+		804C3992217CD6D600576BFD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		804E3D4C21713D1400BD1DA0 /* Shortcuts for Pi-hole.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shortcuts for Pi-hole.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		804E3D5121713D1500BD1DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,12 +70,37 @@
 		8046491B2172597A0028E457 /* MainWindow */ = {
 			isa = PBXGroup;
 			children = (
-				8046492021725E3A0028E457 /* Main.storyboard */,
 				80CA003F217260DA00CC9FB6 /* MainWindowController.swift */,
 				803305692171429100132604 /* MainPreferencesViewController.swift */,
 				80CA005221729EF800CC9FB6 /* MainConnectionViewController.swift */,
 			);
 			path = MainWindow;
+			sourceTree = "<group>";
+		};
+		804C398F217CC62700576BFD /* AboutWindow */ = {
+			isa = PBXGroup;
+			children = (
+				804C3990217CD24700576BFD /* AboutWindowController.swift */,
+				804C3992217CD6D600576BFD /* AboutViewController.swift */,
+			);
+			path = AboutWindow;
+			sourceTree = "<group>";
+		};
+		804C3996217D250100576BFD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				8033056D2171649C00132604 /* ColoredStatusView.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		804C3997217D251100576BFD /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				8033056F2171796B00132604 /* PiHoleProxy.swift */,
+				8033056B217152AE00132604 /* GeneralPreferences.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		804E3D4321713D1400BD1DA0 = {
@@ -95,26 +124,19 @@
 		804E3D4E21713D1400BD1DA0 /* Shortcuts for Pi-hole */ = {
 			isa = PBXGroup;
 			children = (
-				804C398D217C9A2600576BFD /* Credits.rtf */,
-				80ECF9AE217BCD6700879DA2 /* StatusBarMenu */,
-				8065DB1821788F63001E998D /* Preferences */,
-				8033056F2171796B00132604 /* PiHoleProxy.swift */,
+				804C3997217D251100576BFD /* Tools */,
+				804C3996217D250100576BFD /* CustomViews */,
+				8046492021725E3A0028E457 /* Main.storyboard */,
+				804C398F217CC62700576BFD /* AboutWindow */,
 				8046491B2172597A0028E457 /* MainWindow */,
+				80ECF9AE217BCD6700879DA2 /* StatusBarMenu */,
 				803305712171882E00132604 /* Shortcuts for Pi-hole.entitlements */,
 				804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */,
 				804E3D5121713D1500BD1DA0 /* Assets.xcassets */,
 				804E3D5621713D1500BD1DA0 /* Info.plist */,
-				8033056D2171649C00132604 /* ColoredStatusView.swift */,
+				804C398D217C9A2600576BFD /* Credits.rtf */,
 			);
 			path = "Shortcuts for Pi-hole";
-			sourceTree = "<group>";
-		};
-		8065DB1821788F63001E998D /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				8033056B217152AE00132604 /* GeneralPreferences.swift */,
-			);
-			path = Preferences;
 			sourceTree = "<group>";
 		};
 		80ECF9AE217BCD6700879DA2 /* StatusBarMenu */ = {
@@ -259,7 +281,9 @@
 				80CA0040217260DA00CC9FB6 /* MainWindowController.swift in Sources */,
 				8033056E2171649C00132604 /* ColoredStatusView.swift in Sources */,
 				8033056A2171429100132604 /* MainPreferencesViewController.swift in Sources */,
+				804C3991217CD24700576BFD /* AboutWindowController.swift in Sources */,
 				80CA005321729EF800CC9FB6 /* MainConnectionViewController.swift in Sources */,
+				804C3993217CD6D600576BFD /* AboutViewController.swift in Sources */,
 				804E3D5021713D1400BD1DA0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

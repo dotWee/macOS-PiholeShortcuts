@@ -51,7 +51,7 @@
                     </connections>
                 </tabViewController>
             </objects>
-            <point key="canvasLocation" x="1197" y="54.5"/>
+            <point key="canvasLocation" x="1197" y="54"/>
         </scene>
         <!--Preferences View Controller-->
         <scene sceneID="g3V-L8-nxG">
@@ -497,8 +497,139 @@
             </objects>
             <point key="canvasLocation" x="1375" y="559"/>
         </scene>
+        <!--About Window Controller-->
+        <scene sceneID="saf-uF-BMD">
+            <objects>
+                <windowController storyboardIdentifier="AboutWindowControllerIdentifier" id="5h7-mm-RFz" userLabel="About Window Controller" customClass="AboutWindowController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="About" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="niq-n3-yqW" userLabel="About Window">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="344" width="540" height="360"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="5h7-mm-RFz" id="dI9-lG-6HL"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <outlet property="aboutWindow" destination="niq-n3-yqW" id="wZe-n7-8pN"/>
+                        <segue destination="Lqk-ry-Ngh" kind="relationship" relationship="window.shadowedContentViewController" id="GZq-vu-NfM"/>
+                    </connections>
+                </windowController>
+                <customObject id="PNd-Iq-yM2" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="5CX-k2-eio" customClass="AboutWindowController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="54"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="zsu-xH-Lug">
+            <objects>
+                <viewController id="Lqk-ry-Ngh" customClass="AboutViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="8Hr-V8-EAs">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="311"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NuU-aO-Zjw">
+                                <rect key="frame" x="20" y="111" width="180" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="HQq-Hs-6if"/>
+                                    <constraint firstAttribute="width" constant="180" id="SEg-gP-rrt"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSApplicationIcon" id="oGu-LP-MQy"/>
+                            </imageView>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KI4-kM-ZOb">
+                                <rect key="frame" x="218" y="247" width="304" height="44"/>
+                                <textFieldCell key="cell" title="Shortcuts for Pi-hole" id="jzG-Z1-QpZ">
+                                    <font key="font" metaFont="systemThin" size="36"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AQQ-9f-Yyh">
+                                <rect key="frame" x="218" y="220" width="304" height="19"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0 (Built #####)" id="hd5-1o-D3P">
+                                    <font key="font" metaFont="systemLight" size="16"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="WFc-zc-alW">
+                                <rect key="frame" x="18" y="8" width="504" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Copyright © 2018 Lukas Wolfsteiner. All rights reserved." id="0Rj-YO-caK">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ChH-RQ-z4F">
+                                <rect key="frame" x="8" y="31" width="524" height="5"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-vA-y3a">
+                                <rect key="frame" x="218" y="157" width="304" height="18"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright acknowledgments" id="9j8-Ug-YUf">
+                                    <font key="font" metaFont="systemSemibold" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-7e-vRI" userLabel="Application Description Label">
+                                <rect key="frame" x="218" y="195" width="304" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" title="Application description" id="AP2-kp-a1k">
+                                    <font key="font" metaFont="systemLight" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="descriptionTextField:" target="Lqk-ry-Ngh" id="kjL-Iq-vd0"/>
+                                </connections>
+                            </textField>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lnG-LG-sEU">
+                                <rect key="frame" x="218" y="132" width="304" height="17"/>
+                                <textFieldCell key="cell" selectable="YES" title="Pi-hole® is a registered trademark of Pi-hole LLC" id="fbk-gI-BSU">
+                                    <font key="font" metaFont="systemLight" size="13"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ChH-RQ-z4F" firstAttribute="leading" secondItem="8Hr-V8-EAs" secondAttribute="leading" constant="8" id="09B-We-Ohp"/>
+                            <constraint firstAttribute="trailing" secondItem="WFc-zc-alW" secondAttribute="trailing" constant="20" id="3i5-R4-Ng6"/>
+                            <constraint firstItem="AQQ-9f-Yyh" firstAttribute="top" secondItem="KI4-kM-ZOb" secondAttribute="bottom" constant="8" id="7No-kv-rgi"/>
+                            <constraint firstItem="lnG-LG-sEU" firstAttribute="leading" secondItem="NuU-aO-Zjw" secondAttribute="trailing" constant="20" id="Bc9-UD-1oD"/>
+                            <constraint firstItem="NuU-aO-Zjw" firstAttribute="top" secondItem="8Hr-V8-EAs" secondAttribute="top" constant="20" id="FE8-WG-tBI"/>
+                            <constraint firstItem="WFc-zc-alW" firstAttribute="top" secondItem="ChH-RQ-z4F" secondAttribute="bottom" constant="8" id="FLa-0D-Izc"/>
+                            <constraint firstItem="aWH-7e-vRI" firstAttribute="top" secondItem="AQQ-9f-Yyh" secondAttribute="bottom" constant="8" id="KRz-hq-NcP"/>
+                            <constraint firstItem="ChH-RQ-z4F" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NuU-aO-Zjw" secondAttribute="bottom" constant="20" id="Lb4-rI-M2g"/>
+                            <constraint firstAttribute="trailing" secondItem="ERl-vA-y3a" secondAttribute="trailing" constant="20" id="Mrc-Pg-25P"/>
+                            <constraint firstAttribute="trailing" secondItem="KI4-kM-ZOb" secondAttribute="trailing" constant="20" id="PUX-f0-SaK"/>
+                            <constraint firstAttribute="trailing" secondItem="aWH-7e-vRI" secondAttribute="trailing" constant="20" id="TWC-Kk-sIL"/>
+                            <constraint firstItem="lnG-LG-sEU" firstAttribute="top" secondItem="ERl-vA-y3a" secondAttribute="bottom" constant="8" id="WgE-lH-jQZ"/>
+                            <constraint firstItem="WFc-zc-alW" firstAttribute="leading" secondItem="8Hr-V8-EAs" secondAttribute="leading" constant="20" id="XjI-gO-heR"/>
+                            <constraint firstItem="KI4-kM-ZOb" firstAttribute="top" secondItem="8Hr-V8-EAs" secondAttribute="top" constant="20" id="Xsg-9L-trL"/>
+                            <constraint firstItem="aWH-7e-vRI" firstAttribute="leading" secondItem="NuU-aO-Zjw" secondAttribute="trailing" constant="20" id="bs1-3n-QA4"/>
+                            <constraint firstItem="NuU-aO-Zjw" firstAttribute="leading" secondItem="8Hr-V8-EAs" secondAttribute="leading" constant="20" id="ek6-ez-g2A"/>
+                            <constraint firstAttribute="trailing" secondItem="lnG-LG-sEU" secondAttribute="trailing" constant="20" id="jEV-Et-eV5"/>
+                            <constraint firstItem="KI4-kM-ZOb" firstAttribute="leading" secondItem="NuU-aO-Zjw" secondAttribute="trailing" constant="20" id="jvI-02-fk6"/>
+                            <constraint firstItem="ERl-vA-y3a" firstAttribute="leading" secondItem="NuU-aO-Zjw" secondAttribute="trailing" constant="20" id="oGV-lJ-S5m"/>
+                            <constraint firstAttribute="trailing" secondItem="ChH-RQ-z4F" secondAttribute="trailing" constant="8" id="opw-VB-Os4"/>
+                            <constraint firstAttribute="bottom" secondItem="WFc-zc-alW" secondAttribute="bottom" constant="8" id="pqY-pA-lwF"/>
+                            <constraint firstItem="AQQ-9f-Yyh" firstAttribute="leading" secondItem="NuU-aO-Zjw" secondAttribute="trailing" constant="20" id="rok-Rk-Epp"/>
+                            <constraint firstAttribute="trailing" secondItem="AQQ-9f-Yyh" secondAttribute="trailing" constant="20" id="ygt-YI-lQg"/>
+                            <constraint firstItem="ERl-vA-y3a" firstAttribute="top" secondItem="aWH-7e-vRI" secondAttribute="bottom" constant="20" id="ztw-qs-oGv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="aWH-7e-vRI" id="2KY-Jp-0nG"/>
+                    </connections>
+                </viewController>
+                <customObject id="L9K-Vz-JLr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="iJZ-88-fHD" customClass="AboutViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1836" y="535"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSNetwork" width="128" height="128"/>
         <image name="NSPreferencesGeneral" width="128" height="128"/>
     </resources>

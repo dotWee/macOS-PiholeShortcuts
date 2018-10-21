@@ -14,7 +14,7 @@ class MainConnectionViewController: NSViewController {
         super.viewDidLoad()
 
         // Do view setup here.
-        self.displayBuiltUrl()
+        _ = self.displayBuiltUrl()
     }
 
     @IBOutlet weak var coloredStatusViewOutlet: ColoredStatusView!

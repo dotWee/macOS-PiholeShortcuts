@@ -27,10 +27,15 @@
                 <menuItem title="Pi-hole status:" enabled="NO" id="3Hy-Fi-g4j">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem title="Refresh status" keyEquivalent="r" id="nri-ed-opL">
+                    <connections>
+                        <action selector="refreshMenuItemActionHandler:" target="Kpj-0Y-3ml" id="fBd-84-pHm"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="yOe-Fc-X4s"/>
-                <menuItem title="Enable Filter" id="gul-jW-7CU">
+                <menuItem title="Enable filter" id="gul-jW-7CU">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Enable Filter" id="LEA-xg-oLc" userLabel="Enable Filter Menu">
+                    <menu key="submenu" title="Enable filter" id="LEA-xg-oLc" userLabel="Enable Filter Menu">
                         <items>
                             <menuItem title="For 30 seconds" id="qhE-ut-8lJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -51,9 +56,9 @@
                         </items>
                     </menu>
                 </menuItem>
-                <menuItem title="Disable Filter" id="daG-g1-9wJ">
+                <menuItem title="Disable filter" id="daG-g1-9wJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Disable Filter" id="6Kp-El-QaK" userLabel="Disable Filter Menu">
+                    <menu key="submenu" title="Disable filter" id="6Kp-El-QaK" userLabel="Disable Filter Menu">
                         <items>
                             <menuItem title="For 30 seconds" id="dW4-53-1ks">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -75,8 +80,7 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                <menuItem title="About ..." id="5kV-Vb-QxS">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="About ..." keyEquivalent="a" id="5kV-Vb-QxS">
                     <connections>
                         <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="tQe-C5-w20"/>
                     </connections>

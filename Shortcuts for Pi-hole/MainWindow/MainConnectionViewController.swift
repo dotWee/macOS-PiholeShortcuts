@@ -28,7 +28,7 @@ class MainConnectionViewController: NSViewController {
         // config valid
         if connectionStatus!.color == NSColor.green {
             // display url
-            let url = PiHoleProxy.getBaseUrl(action: PiHoleAction.Status)
+            let url = PiHoleProxy.getBaseUrl(action: PiHoleAction.Enable)
             exampleRequestUrlTextField.stringValue = url!.absoluteString
 
             statusMessageLabelOutlet.stringValue = "Press connect to verify"

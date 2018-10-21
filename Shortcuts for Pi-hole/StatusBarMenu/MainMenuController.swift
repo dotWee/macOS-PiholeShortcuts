@@ -40,6 +40,12 @@ class MainMenuController: NSObject, NSMenuDelegate {
         
         statusBarMenu.delegate = self
         
+        // refresh status on creation
+        performPiHoleAction(action: PiHoleAction.Status)
+    }
+    
+    @IBAction func refreshMenuItemActionHandler(_ sender: NSMenuItem) {
+        print("refreshMenuItemActionHandler")
         performPiHoleAction(action: PiHoleAction.Status)
     }
     

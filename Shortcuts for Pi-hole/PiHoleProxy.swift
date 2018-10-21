@@ -33,16 +33,18 @@ class PiHoleProxy: NSObject {
         let apiKey = GeneralPreferences.getApiKey()
 
         let base = requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
-        let path: String = "/admin/api.php?auth=" + apiKey
-
-        var urlString = base + path
-        if (action == PiHoleAction.Enable) {
-            urlString = urlString + "&enable"
-        } else if (action == PiHoleAction.Disable) {
-            urlString = urlString + "&disable"
+        let path: String = "/admin/api.php"
+        let params: String = "?auth=" + apiKey
+        
+        switch action {
+        case PiHoleAction.Enable:
+            return URL(string: base + path + params + "&enable")
+        case PiHoleAction.Disable:
+            return URL(string: base + path + params + "&disable")
+        default:
+            // PiHoleAction.Status
+            return URL(string: base + path)
         }
-
-        return URL(string: urlString)
     }
 
     public static func getConfigStatus() -> ConnectionStatus {

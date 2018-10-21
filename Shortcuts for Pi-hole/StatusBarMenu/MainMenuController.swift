@@ -68,7 +68,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func aboutMenuItemActionHandler(_ sender: NSMenuItem) {
-        // TODO
+        NSApplication.shared.orderFrontStandardAboutPanel()
     }
     
     @IBAction func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {

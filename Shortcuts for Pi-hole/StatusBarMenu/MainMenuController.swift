@@ -25,19 +25,11 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     override func awakeFromNib() {
-        /*
-        if let button = statusBarItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
-            button.menu = statusBarMenu
-            button.target = self
-            
-            print("awaitFromNib: created menu")
+        if let statusBarButton = statusBarItem.button {
+            statusBarButton.image = NSImage(named: "StatusBarButtonImage")
         }
-        */
         
-        statusBarItem.image = NSImage(named: "StatusBarButtonImage")
         statusBarItem.menu = statusBarMenu
-        
         statusBarMenu.delegate = self
         
         // refresh status on creation

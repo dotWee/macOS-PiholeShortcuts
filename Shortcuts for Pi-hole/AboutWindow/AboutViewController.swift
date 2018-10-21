@@ -14,14 +14,6 @@ class AboutViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
         print("AboutViewController: viewDidLoad()")
-       
-        loadDescription()
-    }
-    
-    @IBOutlet weak var descriptionTextField: NSTextField!
-    
-    private func loadDescription() {
-        
     }
 
 }

@@ -547,7 +547,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AQQ-9f-Yyh">
                                 <rect key="frame" x="218" y="220" width="304" height="19"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Version 1.0 (Built #####)" id="hd5-1o-D3P">
-                                    <font key="font" metaFont="systemLight" size="16"/>
+                                    <font key="font" metaFont="systemSemibold" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>

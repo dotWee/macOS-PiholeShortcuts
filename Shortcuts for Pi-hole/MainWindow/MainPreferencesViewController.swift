@@ -58,7 +58,7 @@ final class MainPreferencesViewController: NSViewController {
         self.onPreferencesChange()
     }
 
-    func onConnectionStatusChange(status: ConnectionStatus) {
+    func onConnectionStatusChange(status: PiHoleConnectionResult) {
         self.viewCircleConnectionStatus.updateFillingColor(color: status.color)
         self.labelConnectionStatus.stringValue = status.message
     }

@@ -37,7 +37,6 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func refreshMenuItemActionHandler(_ sender: NSMenuItem) {
-        print("refreshMenuItemActionHandler")
         performPiHoleAction(action: PiHoleAction.Status)
     }
     
@@ -50,7 +49,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     func performPiHoleAction(action: PiHoleAction) {
-        if PiHoleProxy.getConfigStatus().color == NSColor.green {
+        if PiHoleProxy.getConfigStatus().isPositive() {
             self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: Requesting...")
             
             PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status) in

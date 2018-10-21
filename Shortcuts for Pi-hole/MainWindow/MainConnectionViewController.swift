@@ -9,7 +9,6 @@
 import Cocoa
 
 class MainConnectionViewController: NSViewController {
-    var connectionStatus: ConnectionStatus?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,61 +19,68 @@ class MainConnectionViewController: NSViewController {
 
     @IBOutlet weak var coloredStatusViewOutlet: ColoredStatusView!
 
-    @IBOutlet weak var statusMessageLabelOutlet: NSTextField!
+    @IBOutlet weak var connectionStatusTextField: NSTextField!
 
-    func displayBuiltUrl() {
-        connectionStatus = PiHoleProxy.getConfigStatus()
-
-        // config valid
-        if connectionStatus!.color == NSColor.green {
+    @IBOutlet weak var urlTextField: NSTextField!
+    
+    @IBOutlet var connectionLogTextView: NSTextView!
+    
+    private func displayStatus(status: String, color: NSColor, log: String? = nil) {
+        self.connectionStatusTextField.stringValue = status
+        self.coloredStatusViewOutlet.updateFillingColor(color: color)
+        
+        if (log != nil) {
+            self.connectionLogTextView.string = log!
+        }
+    }
+    
+    private func displayConfigurationErrorAlert() {
+        let alert = NSAlert()
+        alert.messageText = "Invalid configuration"
+        alert.informativeText = "Please check your configuration."
+        alert.addButton(withTitle: "Ok")
+        
+        if let mainWindow = self.view.window {
+            alert.beginSheetModal(for: mainWindow) { (returnCode: NSApplication.ModalResponse) -> Void in
+                print ("returnCode: ", returnCode)
+            }
+        }
+    }
+    
+    private func displayBuiltUrl() -> Bool {
+        let connectionStatus = PiHoleProxy.getConfigStatus()
+        
+        if connectionStatus.isPositive() {
+            
             // display url
             let url = PiHoleProxy.getBaseUrl(action: PiHoleAction.Enable)
-            exampleRequestUrlTextField.stringValue = url!.absoluteString
-
-            statusMessageLabelOutlet.stringValue = "Press connect to verify"
-            coloredStatusViewOutlet.updateFillingColor(color: NSColor.gray)
-        } else {
-            statusMessageLabelOutlet.stringValue = "Invalid configuration"
-            coloredStatusViewOutlet.updateFillingColor(color: NSColor.red)
-
-            // show invalid config alert
-            let alert = NSAlert()
-            alert.messageText = "Invalid configuration"
-            alert.informativeText = "Please check your configuration."
-            alert.addButton(withTitle: "Ok")
+            urlTextField.stringValue = url!.absoluteString
             
-            if let mainWindow = self.view.window {
-                alert.beginSheetModal(for: mainWindow) { (returnCode: NSApplication.ModalResponse) -> Void in
-                    print ("returnCode: ", returnCode)
-                }
-            }
+            self.displayStatus(status: "Press connect to verify", color: PiHoleConnectionResult.colorResultNeutral)
+            return true;
+        } else {
+            self.displayStatus(status: connectionStatus.message, color: connectionStatus.color)
+            
+            // show invalid config alert
+            self.displayConfigurationErrorAlert()
+            return false;
         }
     }
 
     @IBAction func connectionButtonActionHandler(_ sender: Any) {
-        self.displayBuiltUrl()
 
-        if connectionStatus!.color == NSColor.green {
-            statusMessageLabelOutlet.stringValue = "Requesting..."
-            coloredStatusViewOutlet.updateFillingColor(color: NSColor.yellow)
-
+        if self.displayBuiltUrl() {
+            displayStatus(status: "Requesting...", color: PiHoleConnectionResult.colorResultNeutral)
+            
             PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status) in
                 DispatchQueue.main.async {
-                    self.testConnectionTextView.string = "Current Pi-hole status: " + status
-                    self.statusMessageLabelOutlet.stringValue = "Connection established"
-                    self.coloredStatusViewOutlet.updateFillingColor(color: NSColor.green)
+                    self.displayStatus(status: "Connection established", color: PiHoleConnectionResult.colorResultPositive, log: "Current Pi-hole status: \(status)")
                 }
             }) { (error) in
                 DispatchQueue.main.async {
-                    self.testConnectionTextView.string = error.domain
-                    self.statusMessageLabelOutlet.stringValue = "An error occurred"
-                    self.coloredStatusViewOutlet.updateFillingColor(color: NSColor.red)
+                    self.displayStatus(status: "An error occurred", color: PiHoleConnectionResult.colorResultNegative, log: error.domain)
                 }
             }
         }
     }
-
-    @IBOutlet weak var exampleRequestUrlTextField: NSTextField!
-
-    @IBOutlet var testConnectionTextView: NSTextView!
 }

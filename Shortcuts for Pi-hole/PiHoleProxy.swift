@@ -8,14 +8,38 @@
 
 import Cocoa
 
-struct ConnectionStatus {
+class PiHoleConnectionResult {
     let message: String
     let color: NSColor
-
-    init(message: String, color: NSColor) {
+    let error: NSError?
+    
+    init(message: String, color: NSColor, error: NSError? = nil) {
         self.message = message
         self.color = color
+        self.error = error
     }
+    
+    public static func Positive(message: String) -> PiHoleConnectionResult {
+        return PiHoleConnectionResult(message: message, color: colorResultPositive)
+    }
+    
+    public static func Negative(message: String, error: NSError? = nil) -> PiHoleConnectionResult {
+        return PiHoleConnectionResult(message: message, color: colorResultNegative, error: error)
+    }
+    
+    public func isPositive() -> Bool {
+        return self.color == PiHoleConnectionResult.colorResultPositive
+    }
+    
+    static let lightRed = NSColor(red: 0.96, green: 0.05, blue: 0.10, alpha: 1.0)
+    static let lightGreen = NSColor(red: 0.16, green: 0.99, blue: 0.18, alpha: 1.0)
+
+    static let darkRed = NSColor(red: 0.59, green: 0.02, blue: 0.05, alpha: 1.0)
+    static let darkGreen = NSColor(red: 0.13, green: 0.70, blue: 0.15, alpha: 1.0)
+    
+    static let colorResultPositive = lightGreen
+    static let colorResultNegative = lightRed
+    static let colorResultNeutral = NSColor.gray
 }
 
 enum PiHoleAction {
@@ -47,39 +71,39 @@ class PiHoleProxy: NSObject {
         }
     }
 
-    public static func getConfigStatus() -> ConnectionStatus {
+    public static func getConfigStatus() -> PiHoleConnectionResult {
         // check if host address is valid
         if (!GeneralPreferences.isHostAddressValid()) {
-            return ConnectionStatus(message: "Invalid Host Address", color: NSColor.red)
+            return PiHoleConnectionResult.Negative(message: "Invalid Host Address")
         }
 
         // check if host port is valid
         if (!GeneralPreferences.isHostPortValid()) {
-            return ConnectionStatus(message: "Invalid Host Port", color: NSColor.red)
+            return PiHoleConnectionResult.Negative(message: "Invalid Host Port")
         }
 
         // check if request protocol is valid
         if (!GeneralPreferences.isRequestProtocolValid()) {
-            return ConnectionStatus(message: "Invalid Protocol", color: NSColor.red)
+            return PiHoleConnectionResult.Negative(message: "Invalid Protocol")
         }
 
         // check if api key is valid
         if (!GeneralPreferences.isApiKeyValid()) {
-            return ConnectionStatus(message: "Invalid API Key", color: NSColor.red)
+            return PiHoleConnectionResult.Negative(message: "Invalid API Key")
         }
 
         // check if timeout is valid
         if (!GeneralPreferences.isTimeoutValid()) {
-            return ConnectionStatus(message: "Invalid Timeout Value", color: NSColor.red)
+            return PiHoleConnectionResult.Negative(message: "Invalid Timeout Value")
         }
 
         // define url on possible host
         if (getBaseUrl() == nil) {
-            return ConnectionStatus(message: "Invalid URL", color: NSColor.yellow)
+            return PiHoleConnectionResult.Negative(message: "Invalid URL")
         }
 
         // config looks good!
-        return ConnectionStatus(message: "Configuration looks valid", color: NSColor.green)
+        return PiHoleConnectionResult.Positive(message: "Configuration looks valid")
     }
 
     public static func getDefaultURLSession() -> URLSession {
@@ -93,7 +117,7 @@ class PiHoleProxy: NSObject {
         return URLSession(configuration: config)
     }
 
-    public static func performActionRequest(_ action: PiHoleAction, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: Error?) -> Void) {
+    public static func performActionRequest(_ action: PiHoleAction, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
 
         do {
             guard let url = getBaseUrl(action: action) else {

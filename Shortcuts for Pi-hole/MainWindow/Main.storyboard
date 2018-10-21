@@ -417,7 +417,7 @@
                                     <constraint firstAttribute="height" constant="20" id="OTG-m4-PqF"/>
                                 </constraints>
                             </customView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-WU-rPj">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-WU-rPj" userLabel="Connection Status">
                                 <rect key="frame" x="186" y="13" width="98" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Hbd-c7-16n"/>
@@ -431,7 +431,7 @@
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-vF-WcE">
                                 <rect key="frame" x="10" y="42" width="310" height="5"/>
                             </box>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-nc-8BG">
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-nc-8BG" userLabel="Connection Log">
                                 <rect key="frame" x="20" y="110" width="290" height="120"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="NmB-2S-dwb">
                                     <rect key="frame" x="1" y="1" width="273" height="118"/>
@@ -489,9 +489,9 @@
                     </view>
                     <connections>
                         <outlet property="coloredStatusViewOutlet" destination="m2Z-8d-KKv" id="WlW-lO-ug0"/>
-                        <outlet property="exampleRequestUrlTextField" destination="Rfn-ib-c11" id="O4S-4Q-hGa"/>
-                        <outlet property="statusMessageLabelOutlet" destination="Yjg-WU-rPj" id="zjX-m7-tY4"/>
-                        <outlet property="testConnectionTextView" destination="fvQ-Yr-swL" id="vHd-Cs-NGh"/>
+                        <outlet property="connectionLogTextView" destination="fvQ-Yr-swL" id="vHd-Cs-NGh"/>
+                        <outlet property="connectionStatusTextField" destination="Yjg-WU-rPj" id="zjX-m7-tY4"/>
+                        <outlet property="urlTextField" destination="Rfn-ib-c11" id="O4S-4Q-hGa"/>
                     </connections>
                 </viewController>
             </objects>

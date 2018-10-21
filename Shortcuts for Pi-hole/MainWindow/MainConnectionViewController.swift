@@ -42,8 +42,11 @@ class MainConnectionViewController: NSViewController {
             alert.messageText = "Invalid configuration"
             alert.informativeText = "Please check your configuration."
             alert.addButton(withTitle: "Ok")
-            alert.beginSheetModal(for: self.view.window!) { (returnCode: NSApplication.ModalResponse) -> Void in
-                print ("returnCode: ", returnCode)
+            
+            if let mainWindow = self.view.window {
+                alert.beginSheetModal(for: mainWindow) { (returnCode: NSApplication.ModalResponse) -> Void in
+                    print ("returnCode: ", returnCode)
+                }
             }
         }
     }
@@ -63,7 +66,7 @@ class MainConnectionViewController: NSViewController {
                 }
             }) { (error) in
                 DispatchQueue.main.async {
-                    self.testConnectionTextView.string = error.debugDescription
+                    self.testConnectionTextView.string = error.domain
                     self.statusMessageLabelOutlet.stringValue = "An error occurred"
                     self.coloredStatusViewOutlet.updateFillingColor(color: NSColor.red)
                 }

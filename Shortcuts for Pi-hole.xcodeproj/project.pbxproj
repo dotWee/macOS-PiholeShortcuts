@@ -18,6 +18,7 @@
 		804C3993217CD6D600576BFD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3992217CD6D600576BFD /* AboutViewController.swift */; };
 		804E3D5021713D1400BD1DA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */; };
 		804E3D5221713D1500BD1DA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 804E3D5121713D1500BD1DA0 /* Assets.xcassets */; };
+		805F21F4217E1BAF00F12C6E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 805F21F3217E1BAF00F12C6E /* LICENSE */; };
 		80CA0040217260DA00CC9FB6 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA003F217260DA00CC9FB6 /* MainWindowController.swift */; };
 		80CA005321729EF800CC9FB6 /* MainConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA005221729EF800CC9FB6 /* MainConnectionViewController.swift */; };
 		80ECF9AD217BC3E500879DA2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECF9AC217BC3E500879DA2 /* MainMenu.xib */; };
@@ -39,6 +40,7 @@
 		804E3D4F21713D1400BD1DA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		804E3D5121713D1500BD1DA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		804E3D5621713D1500BD1DA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		805F21F3217E1BAF00F12C6E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		80CA003F217260DA00CC9FB6 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		80CA005221729EF800CC9FB6 /* MainConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConnectionViewController.swift; sourceTree = "<group>"; };
 		80ECF9AC217BC3E500879DA2 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		804E3D4321713D1400BD1DA0 = {
 			isa = PBXGroup;
 			children = (
+				805F21F3217E1BAF00F12C6E /* LICENSE */,
 				800A2FFA217D3038002EC725 /* README.md */,
 				804E3D4E21713D1400BD1DA0 /* Shortcuts for Pi-hole */,
 				804E3D4D21713D1400BD1DA0 /* Products */,
@@ -199,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805F21F4217E1BAF00F12C6E /* LICENSE in Resources */,
 				80ECF9AD217BC3E500879DA2 /* MainMenu.xib in Resources */,
 				804E3D5221713D1500BD1DA0 /* Assets.xcassets in Resources */,
 				800A2FFB217D3038002EC725 /* README.md in Resources */,

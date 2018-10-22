@@ -563,7 +563,7 @@
                                 <rect key="frame" x="8" y="31" width="524" height="5"/>
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ERl-vA-y3a">
-                                <rect key="frame" x="218" y="125" width="304" height="18"/>
+                                <rect key="frame" x="218" y="108" width="304" height="18"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Copyright acknowledgments" id="9j8-Ug-YUf">
                                     <font key="font" metaFont="systemSemibold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -571,10 +571,11 @@
                                 </textFieldCell>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-7e-vRI" userLabel="Application Description Label">
-                                <rect key="frame" x="218" y="163" width="304" height="68"/>
-                                <textFieldCell key="cell" selectable="YES" id="AP2-kp-a1k">
+                                <rect key="frame" x="218" y="146" width="304" height="85"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="left" id="AP2-kp-a1k">
                                     <font key="font" metaFont="systemLight" size="13"/>
-                                    <string key="title">Shortcuts for Pi-hole is a small menu bar application that lives in your status bar. 
+                                    <string key="title">Shortcuts for Pi-hole is a small menu bar application that lives in your status bar.
+
 It provides quick actions for managing and monitoring your Pi-hole® instance.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -584,7 +585,7 @@ It provides quick actions for managing and monitoring your Pi-hole® instance.</
                                 </connections>
                             </textField>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="lnG-LG-sEU">
-                                <rect key="frame" x="218" y="100" width="304" height="17"/>
+                                <rect key="frame" x="218" y="83" width="304" height="17"/>
                                 <textFieldCell key="cell" selectable="YES" title="Pi-hole® is a registered trademark of Pi-hole LLC" id="fbk-gI-BSU">
                                     <font key="font" metaFont="systemLight" size="13"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -592,10 +593,10 @@ It provides quick actions for managing and monitoring your Pi-hole® instance.</
                                 </textFieldCell>
                             </textField>
                             <stackView distribution="fillEqually" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c4d-3D-Xjc">
-                                <rect key="frame" x="220" y="54" width="300" height="38"/>
+                                <rect key="frame" x="220" y="54" width="300" height="21"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="644-H3-dwK">
-                                        <rect key="frame" x="-6" y="10" width="149" height="32"/>
+                                        <rect key="frame" x="-6" y="-7" width="149" height="32"/>
                                         <buttonCell key="cell" type="push" title="View source code" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tL0-eR-azd">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -605,7 +606,7 @@ It provides quick actions for managing and monitoring your Pi-hole® instance.</
                                         </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Njd-83-sMW">
-                                        <rect key="frame" x="139" y="10" width="167" height="32"/>
+                                        <rect key="frame" x="139" y="-7" width="167" height="32"/>
                                         <buttonCell key="cell" type="push" title="Visit Pi-hole® project" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mGh-CS-dHH">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>

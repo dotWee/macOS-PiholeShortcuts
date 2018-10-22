@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Preferences
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

@@ -93,8 +93,12 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     @IBAction func aboutMenuItemActionHandler(_ sender: NSMenuItem) {
-        //NSApplication.shared.orderFrontStandardAboutPanel()
         aboutWindowController.showWindow(self)
+    }
+    
+    @IBAction func dashboardMenuItemActionHandler(_ sender: NSMenuItem) {
+        let url = PiHoleProxy.getDashboardUrl()
+        NSWorkspace.shared.open(url!)
     }
     
     @IBAction func preferencesMenuItemActionHandler(_ sender: NSMenuItem) {

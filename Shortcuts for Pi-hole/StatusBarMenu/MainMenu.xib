@@ -29,7 +29,7 @@
                 </menuItem>
                 <menuItem title="Refresh status" keyEquivalent="r" id="nri-ed-opL">
                     <connections>
-                        <action selector="refreshMenuItemActionHandler:" target="Kpj-0Y-3ml" id="fBd-84-pHm"/>
+                        <action selector="refreshMenuItemActionHandler:" target="Kpj-0Y-3ml" id="dMu-4s-RsP"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="yOe-Fc-X4s"/>
@@ -39,18 +39,27 @@
                         <items>
                             <menuItem title="For 30 seconds" id="qhE-ut-8lJ">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="enableFor30sMenuItemActionHandler:" target="Kpj-0Y-3ml" id="m1a-Sy-a0O"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="For 1 minute" id="GCp-rE-Fgx">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="enableFor1mMenuItemActionHandler:" target="Kpj-0Y-3ml" id="eGl-oN-3BY"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="For 1 hour" id="PXl-FS-Slt">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="enableFor1hMenuItemActionHandler:" target="Kpj-0Y-3ml" id="iGv-PV-FuX"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="hGn-zg-60B"/>
                             <menuItem title="Permanently" id="Sb3-xY-dV3">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="enablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="b20-Y5-DXh"/>
+                                    <action selector="enablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="HQl-UL-bY8"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -62,18 +71,27 @@
                         <items>
                             <menuItem title="For 30 seconds" id="dW4-53-1ks">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="disableFor30sMenuItemActionHandler:" target="Kpj-0Y-3ml" id="BTL-Y8-kFv"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="For 1 minute" id="aIT-QT-N8H">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="disableFor1mMenuItemActionHandler:" target="Kpj-0Y-3ml" id="O1c-nZ-rrg"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="For 1 hour" id="pnR-iX-7T7">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="disableFor1hMenuItemActionHandler:" target="Kpj-0Y-3ml" id="KtZ-he-wzw"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="NfQ-Td-f7i"/>
                             <menuItem title="Permanently" id="sxK-ZZ-0Q5">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="disablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="MV8-B4-OWL"/>
+                                    <action selector="disablePermanentlyMenuItemActionHandler:" target="Kpj-0Y-3ml" id="bpJ-VH-Jhh"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -82,18 +100,18 @@
                 <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
                 <menuItem title="About ..." keyEquivalent="a" id="5kV-Vb-QxS">
                     <connections>
-                        <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="tQe-C5-w20"/>
+                        <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="2K2-aN-WMy"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Preferences …" keyEquivalent="," id="BOF-NM-1cW">
                     <connections>
-                        <action selector="preferencesMenuItemActionHandler:" target="Kpj-0Y-3ml" id="g7E-4x-Z3Z"/>
+                        <action selector="preferencesMenuItemActionHandler:" target="Kpj-0Y-3ml" id="ydQ-aA-V0a"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                 <menuItem title="Quit Shortcuts for Pi-hole" keyEquivalent="q" id="4sb-4s-VLi">
                     <connections>
-                        <action selector="quitMenuItemActionHandler:" target="Kpj-0Y-3ml" id="cDa-i5-ZuL"/>
+                        <action selector="quitMenuItemActionHandler:" target="Kpj-0Y-3ml" id="twY-e9-rj7"/>
                     </connections>
                 </menuItem>
             </items>

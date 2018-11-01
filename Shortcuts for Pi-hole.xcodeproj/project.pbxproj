@@ -23,7 +23,18 @@
 		80CA005321729EF800CC9FB6 /* MainConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA005221729EF800CC9FB6 /* MainConnectionViewController.swift */; };
 		80ECF9AD217BC3E500879DA2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80ECF9AC217BC3E500879DA2 /* MainMenu.xib */; };
 		80ECF9B0217BCE9400879DA2 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9AF217BCE9400879DA2 /* MainMenuController.swift */; };
+		80FECEE3218B24920007AD14 /* Shortcuts_for_Pi_hole_Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FECEE2218B24920007AD14 /* Shortcuts_for_Pi_hole_Unit_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80FECEE5218B24920007AD14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 804E3D4421713D1400BD1DA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 804E3D4B21713D1400BD1DA0;
+			remoteInfo = "Shortcuts for Pi-hole";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		800A2FFA217D3038002EC725 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -45,10 +56,20 @@
 		80CA005221729EF800CC9FB6 /* MainConnectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConnectionViewController.swift; sourceTree = "<group>"; };
 		80ECF9AC217BC3E500879DA2 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		80ECF9AF217BCE9400879DA2 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
+		80FECEE0218B24910007AD14 /* Shortcuts for Pi-hole Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shortcuts for Pi-hole Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80FECEE2218B24920007AD14 /* Shortcuts_for_Pi_hole_Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts_for_Pi_hole_Unit_Tests.swift; sourceTree = "<group>"; };
+		80FECEE4218B24920007AD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		804E3D4921713D1400BD1DA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80FECEDD218B24910007AD14 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -100,6 +121,7 @@
 				805F21F3217E1BAF00F12C6E /* LICENSE */,
 				800A2FFA217D3038002EC725 /* README.md */,
 				804E3D4E21713D1400BD1DA0 /* Shortcuts for Pi-hole */,
+				80FECEE1218B24920007AD14 /* Shortcuts for Pi-hole Unit Tests */,
 				804E3D4D21713D1400BD1DA0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				804E3D4C21713D1400BD1DA0 /* Shortcuts for Pi-hole.app */,
+				80FECEE0218B24910007AD14 /* Shortcuts for Pi-hole Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +162,15 @@
 			path = StatusBarMenu;
 			sourceTree = "<group>";
 		};
+		80FECEE1218B24920007AD14 /* Shortcuts for Pi-hole Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				80FECEE2218B24920007AD14 /* Shortcuts_for_Pi_hole_Unit_Tests.swift */,
+				80FECEE4218B24920007AD14 /* Info.plist */,
+			);
+			path = "Shortcuts for Pi-hole Unit Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +191,24 @@
 			productReference = 804E3D4C21713D1400BD1DA0 /* Shortcuts for Pi-hole.app */;
 			productType = "com.apple.product-type.application";
 		};
+		80FECEDF218B24910007AD14 /* Shortcuts for Pi-hole Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80FECEE9218B24920007AD14 /* Build configuration list for PBXNativeTarget "Shortcuts for Pi-hole Unit Tests" */;
+			buildPhases = (
+				80FECEDC218B24910007AD14 /* Sources */,
+				80FECEDD218B24910007AD14 /* Frameworks */,
+				80FECEDE218B24910007AD14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80FECEE6218B24920007AD14 /* PBXTargetDependency */,
+			);
+			name = "Shortcuts for Pi-hole Unit Tests";
+			productName = "Shortcuts for Pi-hole Unit Tests";
+			productReference = 80FECEE0218B24910007AD14 /* Shortcuts for Pi-hole Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,6 +227,10 @@
 							};
 						};
 					};
+					80FECEDF218B24910007AD14 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 804E3D4B21713D1400BD1DA0;
+					};
 				};
 			};
 			buildConfigurationList = 804E3D4721713D1400BD1DA0 /* Build configuration list for PBXProject "Shortcuts for Pi-hole" */;
@@ -193,6 +247,7 @@
 			projectRoot = "";
 			targets = (
 				804E3D4B21713D1400BD1DA0 /* Shortcuts for Pi-hole */,
+				80FECEDF218B24910007AD14 /* Shortcuts for Pi-hole Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -208,6 +263,13 @@
 				800A2FFB217D3038002EC725 /* README.md in Resources */,
 				8046492121725E3A0028E457 /* Main.storyboard in Resources */,
 				804C398E217C9A2600576BFD /* Credits.rtf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80FECEDE218B24910007AD14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +293,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		80FECEDC218B24910007AD14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80FECEE3218B24920007AD14 /* Shortcuts_for_Pi_hole_Unit_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80FECEE6218B24920007AD14 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 804E3D4B21713D1400BD1DA0 /* Shortcuts for Pi-hole */;
+			targetProxy = 80FECEE5218B24920007AD14 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		804E3D5821713D1500BD1DA0 /* Debug */ = {
@@ -391,6 +469,46 @@
 			};
 			name = Release;
 		};
+		80FECEE7218B24920007AD14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4EGEDRDDUV;
+				INFOPLIST_FILE = "Shortcuts for Pi-hole Unit Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.dotwee.Shortcuts-for-Pi-hole-Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortcuts for Pi-hole.app/Contents/MacOS/Shortcuts for Pi-hole";
+			};
+			name = Debug;
+		};
+		80FECEE8218B24920007AD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 4EGEDRDDUV;
+				INFOPLIST_FILE = "Shortcuts for Pi-hole Unit Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.dotwee.Shortcuts-for-Pi-hole-Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Shortcuts for Pi-hole.app/Contents/MacOS/Shortcuts for Pi-hole";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,6 +526,15 @@
 			buildConfigurations = (
 				804E3D5B21713D1500BD1DA0 /* Debug */,
 				804E3D5C21713D1500BD1DA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80FECEE9218B24920007AD14 /* Build configuration list for PBXNativeTarget "Shortcuts for Pi-hole Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80FECEE7218B24920007AD14 /* Debug */,
+				80FECEE8218B24920007AD14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -103,6 +103,11 @@
                         <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="2K2-aN-WMy"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Dashboard ..." keyEquivalent="d" id="tfV-hR-KJg" userLabel="Dashboard Menu Item">
+                    <connections>
+                        <action selector="dashboardMenuItemActionHandler:" target="Kpj-0Y-3ml" id="i6w-q4-YOR"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Preferences …" keyEquivalent="," id="BOF-NM-1cW">
                     <connections>
                         <action selector="preferencesMenuItemActionHandler:" target="Kpj-0Y-3ml" id="ydQ-aA-V0a"/>

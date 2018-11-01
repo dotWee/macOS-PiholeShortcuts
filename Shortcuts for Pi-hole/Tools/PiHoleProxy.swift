@@ -49,14 +49,23 @@ enum PiHoleAction {
 }
 
 class PiHoleProxy: NSObject {
-
-    public static func getBaseUrl(action: PiHoleAction = PiHoleAction.Status, seconds: Int = 0) -> URL? {
+    
+    public static func getBaseUrlString() -> String {
         let hostAddress = GeneralPreferences.getHostAddress()
         let hostPort = GeneralPreferences.getHostPort()
         let requestProtocol = GeneralPreferences.getRequestProtocol()
+        
+        return requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
+    }
+    
+    public static func getDashboardUrl() -> URL? {
+        return URL(string: getBaseUrlString() + "/admin")
+    }
+
+    public static func getApiUrl(action: PiHoleAction = PiHoleAction.Status, seconds: Int = 0) -> URL? {
         let apiKey = GeneralPreferences.getApiKey()
 
-        let base = requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
+        let base = getBaseUrlString()
         let path: String = "/admin/api.php"
         
         var urlString: String = base + path
@@ -102,7 +111,7 @@ class PiHoleProxy: NSObject {
         }
 
         // define url on possible host
-        if (getBaseUrl() == nil) {
+        if (getApiUrl() == nil) {
             return PiHoleConnectionResult.Negative(message: "Invalid URL")
         }
 
@@ -124,7 +133,7 @@ class PiHoleProxy: NSObject {
     public static func performActionRequest(_ action: PiHoleAction, seconds: Int = 0, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
 
         do {
-            guard let url = getBaseUrl(action: action, seconds: seconds) else {
+            guard let url = getApiUrl(action: action, seconds: seconds) else {
                 failure(NSError(domain: "Error invalid endpoint", code: 1, userInfo: nil))
                 return
             }

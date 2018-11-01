@@ -41,19 +41,43 @@ class MainMenuController: NSObject, NSMenuDelegate {
         performPiHoleAction(action: PiHoleAction.Status)
     }
     
+    @IBAction func enableFor30sMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Enable, seconds: 30)
+    }
+    
+    @IBAction func enableFor1mMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Enable, seconds: 60)
+    }
+    
+    @IBAction func enableFor1hMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Enable, seconds: 3600)
+    }
+    
     @IBAction func enablePermanentlyMenuItemActionHandler(_ sender: NSMenuItem) {
         performPiHoleAction(action: PiHoleAction.Enable)
+    }
+    
+    @IBAction func disableFor30sMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Disable, seconds: 30)
+    }
+    
+    @IBAction func disableFor1mMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Disable, seconds: 60)
+    }
+    
+    @IBAction func disableFor1hMenuItemActionHandler(_ sender: NSMenuItem) {
+        performPiHoleAction(action: PiHoleAction.Disable, seconds: 3600)
     }
     
     @IBAction func disablePermanentlyMenuItemActionHandler(_ sender: NSMenuItem) {
         performPiHoleAction(action: PiHoleAction.Disable)
     }
     
-    func performPiHoleAction(action: PiHoleAction) {
+    func performPiHoleAction(action: PiHoleAction, seconds: Int = 0) {
         if PiHoleProxy.getConfigStatus().isPositive() {
             self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: Requesting...")
             
-            PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status) in
+            PiHoleProxy.performActionRequest(action, seconds: seconds, onSuccess: { (status) in
                 self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: " + status)
             }) { (error) in self.dispatchStatusMenuItemUpdate(withTitle: "Error: No connection.") }
         } else {
@@ -62,6 +86,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
     }
     
     func dispatchStatusMenuItemUpdate(withTitle: String) {
+        print("dispatchStatusMenuItemUpdate with title " + withTitle)
         DispatchQueue.main.async {
             self.statusMenuItem.title = withTitle
         }

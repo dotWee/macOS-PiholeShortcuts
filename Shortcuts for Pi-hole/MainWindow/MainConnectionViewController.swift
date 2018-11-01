@@ -74,7 +74,7 @@ class MainConnectionViewController: NSViewController {
             
             PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status) in
                 DispatchQueue.main.async {
-                    self.displayStatus(status: "Connection established", color: PiHoleConnectionResult.colorResultPositive, log: "Current Pi-hole status: \(status)")
+                    self.displayStatus(status: "Connection established", color: PiHoleConnectionResult.colorResultPositive, log: "Pi-hole status: \(status)")
                 }
             }) { (error) in
                 DispatchQueue.main.async {

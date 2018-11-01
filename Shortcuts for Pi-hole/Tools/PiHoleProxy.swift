@@ -50,7 +50,7 @@ enum PiHoleAction {
 
 class PiHoleProxy: NSObject {
 
-    public static func getBaseUrl(action: PiHoleAction = PiHoleAction.Status) -> URL? {
+    public static func getBaseUrl(action: PiHoleAction = PiHoleAction.Status, seconds: Int = 0) -> URL? {
         let hostAddress = GeneralPreferences.getHostAddress()
         let hostPort = GeneralPreferences.getHostPort()
         let requestProtocol = GeneralPreferences.getRequestProtocol()
@@ -58,17 +58,21 @@ class PiHoleProxy: NSObject {
 
         let base = requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
         let path: String = "/admin/api.php"
-        let params: String = "?auth=" + apiKey
         
-        switch action {
-        case PiHoleAction.Enable:
-            return URL(string: base + path + params + "&enable")
-        case PiHoleAction.Disable:
-            return URL(string: base + path + params + "&disable")
-        default:
+        var urlString: String = base + path
+        
+        if action == PiHoleAction.Enable || action == PiHoleAction.Disable {
+            urlString += "?auth=" + apiKey
+            urlString += (action == PiHoleAction.Enable ? "&enable" : "&disable")
+            
+            if seconds > 0 {
+                urlString += "=" + String(seconds)
+            }
+        } else {
             // PiHoleAction.Status
-            return URL(string: base + path)
         }
+        
+        return URL(string: urlString)
     }
 
     public static func getConfigStatus() -> PiHoleConnectionResult {
@@ -117,10 +121,10 @@ class PiHoleProxy: NSObject {
         return URLSession(configuration: config)
     }
 
-    public static func performActionRequest(_ action: PiHoleAction, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
+    public static func performActionRequest(_ action: PiHoleAction, seconds: Int = 0, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
 
         do {
-            guard let url = getBaseUrl(action: action) else {
+            guard let url = getBaseUrl(action: action, seconds: seconds) else {
                 failure(NSError(domain: "Error invalid endpoint", code: 1, userInfo: nil))
                 return
             }

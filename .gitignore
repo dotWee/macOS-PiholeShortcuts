@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/xcode,macos,cocoapods
 
+### Pi-hole docker data ###
+dnsmasq.d/
+pihole/
+
 ### CocoaPods ###
 ## CocoaPods GitIgnore Template
 

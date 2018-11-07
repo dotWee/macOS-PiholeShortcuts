@@ -70,6 +70,7 @@
 		80FECEEE218B24FF0007AD14 /* Shortcuts for Pi-hole UI Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Shortcuts for Pi-hole UI Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FECEF0218B24FF0007AD14 /* Shortcuts_for_Pi_hole_UI_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shortcuts_for_Pi_hole_UI_Tests.swift; sourceTree = "<group>"; };
 		80FECEF2218B24FF0007AD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80FECEFD218B2CE20007AD14 /* docker-pihole.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "docker-pihole.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +137,7 @@
 		804E3D4321713D1400BD1DA0 = {
 			isa = PBXGroup;
 			children = (
+				80FECEFD218B2CE20007AD14 /* docker-pihole.sh */,
 				805F21F3217E1BAF00F12C6E /* LICENSE */,
 				800A2FFA217D3038002EC725 /* README.md */,
 				804E3D4E21713D1400BD1DA0 /* Shortcuts for Pi-hole */,

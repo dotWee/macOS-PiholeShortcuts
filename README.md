@@ -10,6 +10,8 @@ General Preferences     |  Connection Preferences
 
 ## Things to complete
 
+- [ ] Application icon
+- [ ] Update mechanism (using the [Spark Framework](https://sparkle-project.org/))
 - [ ] Implement Unit-/Testing
 - [ ] Create as cask
 

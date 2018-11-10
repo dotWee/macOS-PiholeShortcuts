@@ -4,6 +4,10 @@ Shortcuts for Pi-hole is a small menu bar application that lives in your status 
 
 <img src="Screenshots/Overview.png"/>
 
+General Preferences     |  Connection Preferences
+:-------------------------:|:-------------------------:
+<img src="Screenshots/GeneralPreferences.png"/>  |  <img src="Screenshots/ConnectionPreferences.png"/>
+
 ## Things to complete
 
 - [ ] Implement Unit-/Testing

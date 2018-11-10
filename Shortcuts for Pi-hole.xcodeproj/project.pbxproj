@@ -21,6 +21,8 @@
 		804E7FFE21977F5000A22D35 /* PiHoleConnectionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E7FFD21977F5000A22D35 /* PiHoleConnectionResult.swift */; };
 		804E800021977F7E00A22D35 /* PiHoleAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804E7FFF21977F7E00A22D35 /* PiHoleAction.swift */; };
 		804E800321977FBA00A22D35 /* Overview.png in Resources */ = {isa = PBXBuildFile; fileRef = 804E800221977FBA00A22D35 /* Overview.png */; };
+		804E80062197810200A22D35 /* GeneralPreferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 804E80042197810200A22D35 /* GeneralPreferences.png */; };
+		804E80072197810200A22D35 /* ConnectionPreferences.png in Resources */ = {isa = PBXBuildFile; fileRef = 804E80052197810200A22D35 /* ConnectionPreferences.png */; };
 		805F21F4217E1BAF00F12C6E /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 805F21F3217E1BAF00F12C6E /* LICENSE */; };
 		80CA0040217260DA00CC9FB6 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA003F217260DA00CC9FB6 /* PreferencesWindowController.swift */; };
 		80CA005321729EF800CC9FB6 /* ConnectionPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CA005221729EF800CC9FB6 /* ConnectionPreferencesViewController.swift */; };
@@ -46,6 +48,8 @@
 		804E7FFD21977F5000A22D35 /* PiHoleConnectionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiHoleConnectionResult.swift; sourceTree = "<group>"; };
 		804E7FFF21977F7E00A22D35 /* PiHoleAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiHoleAction.swift; sourceTree = "<group>"; };
 		804E800221977FBA00A22D35 /* Overview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overview.png; sourceTree = "<group>"; };
+		804E80042197810200A22D35 /* GeneralPreferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GeneralPreferences.png; sourceTree = "<group>"; };
+		804E80052197810200A22D35 /* ConnectionPreferences.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ConnectionPreferences.png; sourceTree = "<group>"; };
 		805F21F3217E1BAF00F12C6E /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		80CA003F217260DA00CC9FB6 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		80CA005221729EF800CC9FB6 /* ConnectionPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		804E800121977FBA00A22D35 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				804E80052197810200A22D35 /* ConnectionPreferences.png */,
+				804E80042197810200A22D35 /* GeneralPreferences.png */,
 				804E800221977FBA00A22D35 /* Overview.png */,
 			);
 			path = Screenshots;
@@ -212,12 +218,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				805F21F4217E1BAF00F12C6E /* LICENSE in Resources */,
+				804E80062197810200A22D35 /* GeneralPreferences.png in Resources */,
 				804E800321977FBA00A22D35 /* Overview.png in Resources */,
 				80ECF9AD217BC3E500879DA2 /* MainMenu.xib in Resources */,
 				804E3D5221713D1500BD1DA0 /* Assets.xcassets in Resources */,
 				800A2FFB217D3038002EC725 /* README.md in Resources */,
 				8046492121725E3A0028E457 /* Main.storyboard in Resources */,
 				804C398E217C9A2600576BFD /* Credits.rtf in Resources */,
+				804E80072197810200A22D35 /* ConnectionPreferences.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

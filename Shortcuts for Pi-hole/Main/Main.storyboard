@@ -659,6 +659,7 @@ It provides quick actions for managing and monitoring your Pi-hole® instance.</
                     </view>
                     <connections>
                         <outlet property="descriptionTextField" destination="aWH-7e-vRI" id="2KY-Jp-0nG"/>
+                        <outlet property="versionTextField" destination="AQQ-9f-Yyh" id="Crp-9g-qzT"/>
                     </connections>
                 </viewController>
                 <customObject id="L9K-Vz-JLr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

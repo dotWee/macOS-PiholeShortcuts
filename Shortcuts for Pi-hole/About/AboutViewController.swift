@@ -9,7 +9,9 @@
 import Cocoa
 
 class AboutViewController: NSViewController {
-
+    
+    @IBOutlet weak var versionTextField: NSTextField!
+    
     @IBAction func viewSourceCodeActionHandler(_ sender: NSButton) {
         NSWorkspace.shared.open(URL(string: "https://github.com/dotWee/macOS-PiholeShortcuts")!)
     }
@@ -20,8 +22,13 @@ class AboutViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do view setup here.
         print("AboutViewController: viewDidLoad()")
+        
+        let versionValue = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        let bundleValue = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+        versionTextField.stringValue = "Version: \(versionValue!) (Bundle No. #\(bundleValue!))";
     }
 
 }

@@ -1,27 +1,3 @@
-# Shortcuts for Pi-hole
-
-Shortcuts for Pi-hole is a small menu bar application that lives in your status bar. It provides quick actions for managing and monitoring your Pi-hole® instance.
-
-<img src="Screenshots/Overview.png"/>
-
-General Preferences     |  Connection Preferences
-:-------------------------:|:-------------------------:
-<img src="Screenshots/GeneralPreferences.png"/>  |  <img src="Screenshots/ConnectionPreferences.png"/>
-
-## Things to complete
-
-- [ ] Application icon
-- [ ] Update mechanism (using the [Spark Framework](https://sparkle-project.org/))
-- [ ] Implement Unit-/Testing
-- [ ] Create as cask
-
-## Copyright acknowledges and credits
-
-Big thanks to the whole Pi-hole userspace for developing and maintaining the Pi-hole project. Visit [pi-hole.net](https://pi-hole.net/) for more information. This application uses the Pi-hole API and it's logo as menu bar icon.
-
-**Pi-hole® is a registered trademark of Pi-hole LLC**
-
-## Source code license
 
 MIT License
 

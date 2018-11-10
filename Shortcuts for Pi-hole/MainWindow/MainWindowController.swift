@@ -9,11 +9,16 @@
 import Cocoa
 
 class MainWindowController: NSWindowController {
+    
+    override func showWindow(_ sender: Any?) {
+        super.showWindow(sender)
+        
+        AppDelegate.bringToFront(window: self.window!)
+    }
 
     override func windowDidLoad() {
         super.windowDidLoad()
 
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
-
 }

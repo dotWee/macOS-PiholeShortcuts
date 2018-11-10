@@ -8,7 +8,7 @@
 
 import Cocoa
 
-final class MainPreferencesViewController: NSViewController {
+final class GeneralPreferencesViewController: NSViewController {
     @IBOutlet weak var secureTextFieldApiKey: NSSecureTextField!
     @IBOutlet weak var popUpButtonRequestProtocol: NSPopUpButton!
 
@@ -23,7 +23,7 @@ final class MainPreferencesViewController: NSViewController {
     @IBAction func hostAddressActionHandler(_ sender: NSTextField) {
         let hostAddress = sender.stringValue
         print("hostAddressActionHandler", hostAddress)
-        GeneralPreferences.saveHostAddress(hostAddress: hostAddress)
+        Preferences.saveHostAddress(hostAddress: hostAddress)
 
         self.onPreferencesChange()
     }
@@ -31,7 +31,7 @@ final class MainPreferencesViewController: NSViewController {
     @IBAction func hostPortActionHandler(_ sender: NSTextField) {
         let hostPort = sender.integerValue
         print("hostPortActionHandler", hostPort)
-        GeneralPreferences.saveHostPort(hostPort: hostPort)
+        Preferences.saveHostPort(hostPort: hostPort)
 
         self.onPreferencesChange()
     }
@@ -39,21 +39,21 @@ final class MainPreferencesViewController: NSViewController {
     @IBAction func requestProtocolActionHandler(_ sender: NSPopUpButton) {
         let requestProtocol = sender.titleOfSelectedItem!
         print("requestProtocolActionHandler", requestProtocol)
-        GeneralPreferences.saveRequestProtocol(requestProtocol: requestProtocol)
+        Preferences.saveRequestProtocol(requestProtocol: requestProtocol)
 
         self.onPreferencesChange()
     }
     @IBAction func apiKeyActionHandler(_ sender: NSSecureTextField) {
         let apiKey = sender.stringValue
         print("apiKeyActionHandler", apiKey)
-        GeneralPreferences.saveApiKey(apiKey: apiKey)
+        Preferences.saveApiKey(apiKey: apiKey)
 
         self.onPreferencesChange()
     }
     @IBAction func timeoutActionHandler(_ sender: NSTextField) {
         let timeout = sender.integerValue
         print("timeoutActionHandler", timeout)
-        GeneralPreferences.saveTimeout(timeout: timeout)
+        Preferences.saveTimeout(timeout: timeout)
 
         self.onPreferencesChange()
     }
@@ -72,17 +72,17 @@ final class MainPreferencesViewController: NSViewController {
         super.viewDidLoad()
 
         // restore persisted preferences in view
-        if let hostAddress = GeneralPreferences.getHostAddress(), !hostAddress.isEmpty {
+        if let hostAddress = Preferences.getHostAddress(), !hostAddress.isEmpty {
             textFieldHostAddress.stringValue = hostAddress
         }
 
-        let hostPort = GeneralPreferences.getHostPort()
+        let hostPort = Preferences.getHostPort()
         textFieldHostPort.integerValue = hostPort
 
-        let requestProtocol = GeneralPreferences.getRequestProtocol()
+        let requestProtocol = Preferences.getRequestProtocol()
         popUpButtonRequestProtocol.selectItem(withTitle: requestProtocol)
 
-        let apiKey = GeneralPreferences.getApiKey()
+        let apiKey = Preferences.getApiKey()
         if !apiKey.isEmpty {
             secureTextFieldApiKey.stringValue = apiKey
         }

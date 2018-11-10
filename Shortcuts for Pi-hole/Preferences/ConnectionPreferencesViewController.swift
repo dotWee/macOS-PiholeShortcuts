@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainConnectionViewController: NSViewController {
+class ConnectionPreferencesViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

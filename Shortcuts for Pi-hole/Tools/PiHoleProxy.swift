@@ -8,52 +8,12 @@
 
 import Cocoa
 
-class PiHoleConnectionResult {
-    let message: String
-    let color: NSColor
-    let error: NSError?
-    
-    init(message: String, color: NSColor, error: NSError? = nil) {
-        self.message = message
-        self.color = color
-        self.error = error
-    }
-    
-    public static func Positive(message: String) -> PiHoleConnectionResult {
-        return PiHoleConnectionResult(message: message, color: colorResultPositive)
-    }
-    
-    public static func Negative(message: String, error: NSError? = nil) -> PiHoleConnectionResult {
-        return PiHoleConnectionResult(message: message, color: colorResultNegative, error: error)
-    }
-    
-    public func isPositive() -> Bool {
-        return self.color == PiHoleConnectionResult.colorResultPositive
-    }
-    
-    static let lightRed = NSColor(red: 0.96, green: 0.05, blue: 0.10, alpha: 1.0)
-    static let lightGreen = NSColor(red: 0.16, green: 0.99, blue: 0.18, alpha: 1.0)
-
-    static let darkRed = NSColor(red: 0.59, green: 0.02, blue: 0.05, alpha: 1.0)
-    static let darkGreen = NSColor(red: 0.13, green: 0.70, blue: 0.15, alpha: 1.0)
-    
-    static let colorResultPositive = lightGreen
-    static let colorResultNegative = lightRed
-    static let colorResultNeutral = NSColor.gray
-}
-
-enum PiHoleAction {
-    case Status
-    case Enable
-    case Disable
-}
-
 class PiHoleProxy: NSObject {
     
     public static func getBaseUrlString() -> String {
-        let hostAddress = GeneralPreferences.getHostAddress()
-        let hostPort = GeneralPreferences.getHostPort()
-        let requestProtocol = GeneralPreferences.getRequestProtocol()
+        let hostAddress = Preferences.getHostAddress()
+        let hostPort = Preferences.getHostPort()
+        let requestProtocol = Preferences.getRequestProtocol()
         
         return requestProtocol + "://" + hostAddress! + ":" + String(hostPort)
     }
@@ -63,7 +23,7 @@ class PiHoleProxy: NSObject {
     }
 
     public static func getApiUrl(action: PiHoleAction = PiHoleAction.Status, seconds: Int = 0) -> URL? {
-        let apiKey = GeneralPreferences.getApiKey()
+        let apiKey = Preferences.getApiKey()
 
         let base = getBaseUrlString()
         let path: String = "/admin/api.php"
@@ -86,27 +46,27 @@ class PiHoleProxy: NSObject {
 
     public static func getConfigStatus() -> PiHoleConnectionResult {
         // check if host address is valid
-        if (!GeneralPreferences.isHostAddressValid()) {
+        if (!Preferences.isHostAddressValid()) {
             return PiHoleConnectionResult.Negative(message: "Invalid Host Address")
         }
 
         // check if host port is valid
-        if (!GeneralPreferences.isHostPortValid()) {
+        if (!Preferences.isHostPortValid()) {
             return PiHoleConnectionResult.Negative(message: "Invalid Host Port")
         }
 
         // check if request protocol is valid
-        if (!GeneralPreferences.isRequestProtocolValid()) {
+        if (!Preferences.isRequestProtocolValid()) {
             return PiHoleConnectionResult.Negative(message: "Invalid Protocol")
         }
 
         // check if api key is valid
-        if (!GeneralPreferences.isApiKeyValid()) {
+        if (!Preferences.isApiKeyValid()) {
             return PiHoleConnectionResult.Negative(message: "Invalid API Key")
         }
 
         // check if timeout is valid
-        if (!GeneralPreferences.isTimeoutValid()) {
+        if (!Preferences.isTimeoutValid()) {
             return PiHoleConnectionResult.Negative(message: "Invalid Timeout Value")
         }
 
@@ -121,7 +81,7 @@ class PiHoleProxy: NSObject {
 
     public static func getDefaultURLSession() -> URLSession {
         let config = URLSessionConfiguration.default
-        let timeout = GeneralPreferences.getTimeout()
+        let timeout = Preferences.getTimeout()
 
         // timeout 2s
         config.timeoutIntervalForRequest = TimeInterval(timeout)

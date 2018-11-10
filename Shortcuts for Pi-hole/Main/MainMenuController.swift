@@ -18,7 +18,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var preferencesMenuItem: NSMenuItem!
     @IBOutlet weak var quitMenuItem: NSMenuItem!
     
-    let mainWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController() as! MainWindowController
+    let mainWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateInitialController() as! PreferencesWindowController
     let aboutWindowController = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "AboutWindowControllerIdentifier") as! AboutWindowController
 
     override init() {

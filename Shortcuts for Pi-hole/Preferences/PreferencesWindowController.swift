@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowController: NSWindowController {
+class PreferencesWindowController: NSWindowController {
     
     override func showWindow(_ sender: Any?) {
         super.showWindow(sender)

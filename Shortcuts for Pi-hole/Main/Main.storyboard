@@ -8,7 +8,7 @@
         <!--Window Controller-->
         <scene sceneID="yuV-q4-eqr">
             <objects>
-                <windowController id="Kx9-pV-kLt" customClass="MainWindowController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController id="Kx9-pV-kLt" customClass="PreferencesWindowController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Shortcuts for Pi-hole" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="hSM-Sz-iCT">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -33,8 +33,8 @@
                 <customObject id="T1c-uq-EGA" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <tabViewController selectedTabViewItemIndex="0" tabStyle="toolbar" id="AR0-Gg-BXj" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem identifier="" image="NSPreferencesGeneral" id="ERZ-Wt-6qQ" userLabel="Preferences Tab"/>
-                        <tabViewItem identifier="" image="NSNetwork" id="h6n-mK-PE9" userLabel="Connection Tab"/>
+                        <tabViewItem label="General" identifier="" image="NSPreferencesGeneral" id="ERZ-Wt-6qQ" userLabel="General Preferences Tab"/>
+                        <tabViewItem label="Connection" identifier="" image="NSNetwork" id="h6n-mK-PE9" userLabel="Connection Preferences Tab"/>
                     </tabViewItems>
                     <tabView key="tabView" type="noTabsNoBorder" id="jRq-rW-ioP">
                         <rect key="frame" x="-167" y="13" width="330" height="360"/>
@@ -57,7 +57,7 @@
         <scene sceneID="g3V-L8-nxG">
             <objects>
                 <customObject id="MYz-3V-bQb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Preferences" id="jRD-eU-JAZ" userLabel="Preferences View Controller" customClass="MainPreferencesViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="General Preferences" id="jRD-eU-JAZ" userLabel="Preferences View Controller" customClass="GeneralPreferencesViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
                     <customView key="view" id="rL7-MA-xlZ" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="330" height="360"/>
                         <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
@@ -339,7 +339,7 @@
         <scene sceneID="yXD-A3-jER">
             <objects>
                 <customObject id="CIJ-Rs-52H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController title="Connection" id="keW-xg-6Mf" userLabel="Connection View Controller" customClass="MainConnectionViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Connection Preferences" id="keW-xg-6Mf" userLabel="Connection View Controller" customClass="ConnectionPreferencesViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="4Vt-JH-THD">
                         <rect key="frame" x="0.0" y="0.0" width="330" height="360"/>
                         <autoresizingMask key="autoresizingMask" heightSizable="YES"/>

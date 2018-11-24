@@ -13,6 +13,9 @@
 		8033056E2171649C00132604 /* ColoredStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033056D2171649C00132604 /* ColoredStatusView.swift */; };
 		803305702171796B00132604 /* PiHoleProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8033056F2171796B00132604 /* PiHoleProxy.swift */; };
 		8046492121725E3A0028E457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8046492021725E3A0028E457 /* Main.storyboard */; };
+		804708D621A9EFB3008F2843 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804708D521A9EFB3008F2843 /* Sparkle.framework */; };
+		804708D721A9EFB3008F2843 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 804708D521A9EFB3008F2843 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		804708DC21A9F039008F2843 /* Sparkle.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 804708DB21A9F038008F2843 /* Sparkle.framework.dSYM */; };
 		804C398E217C9A2600576BFD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 804C398D217C9A2600576BFD /* Credits.rtf */; };
 		804C3991217CD24700576BFD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3990217CD24700576BFD /* AboutWindowController.swift */; };
 		804C3993217CD6D600576BFD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3992217CD6D600576BFD /* AboutViewController.swift */; };
@@ -30,6 +33,30 @@
 		80ECF9B0217BCE9400879DA2 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80ECF9AF217BCE9400879DA2 /* MainMenuController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		804708D821A9EFB3008F2843 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				804708D721A9EFB3008F2843 /* Sparkle.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		804708DA21A9F007008F2843 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				804708DC21A9F039008F2843 /* Sparkle.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		800A2FFA217D3038002EC725 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		803305692171429100132604 /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +65,8 @@
 		8033056F2171796B00132604 /* PiHoleProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PiHoleProxy.swift; path = "Shortcuts for Pi-hole/Tools/PiHoleProxy.swift"; sourceTree = SOURCE_ROOT; };
 		803305712171882E00132604 /* Shortcuts for Pi-hole.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Shortcuts for Pi-hole.entitlements"; sourceTree = "<group>"; };
 		8046492021725E3A0028E457 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		804708D521A9EFB3008F2843 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Carthage/Build/Mac/Sparkle.framework; sourceTree = "<group>"; };
+		804708DB21A9F038008F2843 /* Sparkle.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Sparkle.framework.dSYM; path = Carthage/Build/Mac/Sparkle.framework.dSYM; sourceTree = "<group>"; };
 		804C398D217C9A2600576BFD /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		804C3990217CD24700576BFD /* AboutWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindowController.swift; sourceTree = "<group>"; };
 		804C3992217CD6D600576BFD /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				804708D621A9EFB3008F2843 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +132,8 @@
 		804E3D4321713D1400BD1DA0 = {
 			isa = PBXGroup;
 			children = (
+				804708DB21A9F038008F2843 /* Sparkle.framework.dSYM */,
+				804708D521A9EFB3008F2843 /* Sparkle.framework */,
 				804E800121977FBA00A22D35 /* Screenshots */,
 				805F21F3217E1BAF00F12C6E /* LICENSE */,
 				800A2FFA217D3038002EC725 /* README.md */,
@@ -164,6 +196,8 @@
 				804E3D4821713D1400BD1DA0 /* Sources */,
 				804E3D4921713D1400BD1DA0 /* Frameworks */,
 				804E3D4A21713D1400BD1DA0 /* Resources */,
+				804708D821A9EFB3008F2843 /* Embed Frameworks */,
+				804708DA21A9F007008F2843 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -378,6 +412,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4EGEDRDDUV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Shortcuts for Pi-hole/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,6 +437,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4EGEDRDDUV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = "Shortcuts for Pi-hole/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

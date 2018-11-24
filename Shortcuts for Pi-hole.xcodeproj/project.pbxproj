@@ -15,7 +15,7 @@
 		8046492121725E3A0028E457 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8046492021725E3A0028E457 /* Main.storyboard */; };
 		804708D621A9EFB3008F2843 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804708D521A9EFB3008F2843 /* Sparkle.framework */; };
 		804708D721A9EFB3008F2843 /* Sparkle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 804708D521A9EFB3008F2843 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		804708DC21A9F039008F2843 /* Sparkle.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 804708DB21A9F038008F2843 /* Sparkle.framework.dSYM */; };
+		804708DC21A9F039008F2843 /* Sparkle.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 804708DB21A9F038008F2843 /* Sparkle.framework.dSYM */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		804C398E217C9A2600576BFD /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 804C398D217C9A2600576BFD /* Credits.rtf */; };
 		804C3991217CD24700576BFD /* AboutWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3990217CD24700576BFD /* AboutWindowController.swift */; };
 		804C3993217CD6D600576BFD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804C3992217CD6D600576BFD /* AboutViewController.swift */; };

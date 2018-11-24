@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -22,6 +22,7 @@
                 <outlet property="statusMenuItem" destination="3Hy-Fi-g4j" id="TmU-J4-Bc9"/>
             </connections>
         </customObject>
+        <customObject id="4iD-pF-B1g" customClass="SUUpdater"/>
         <menu systemMenu="apple" id="uQy-DD-JDr" userLabel="Status Bar Menu">
             <items>
                 <menuItem title="Pi-hole status:" enabled="NO" id="3Hy-Fi-g4j">
@@ -101,6 +102,11 @@
                 <menuItem title="About ..." keyEquivalent="a" id="5kV-Vb-QxS">
                     <connections>
                         <action selector="aboutMenuItemActionHandler:" target="Kpj-0Y-3ml" id="2K2-aN-WMy"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Updates ..." keyEquivalent="u" id="jhA-32-tko">
+                    <connections>
+                        <action selector="checkForUpdates:" target="4iD-pF-B1g" id="Fyc-S6-sxt"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Dashboard ..." keyEquivalent="d" id="tfV-hR-KJg" userLabel="Dashboard Menu Item">

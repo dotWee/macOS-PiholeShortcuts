@@ -13,6 +13,7 @@ struct Preferences {
     static let userSessionKey = Bundle.main.bundleIdentifier!
     
     static let DEFAULT_TIMEOUT = 1
+    static let DEFAULT_PORT = 80
 
     struct Model {
         var hostAddress: String?
@@ -67,7 +68,7 @@ struct Preferences {
 
     static func getHostPort() -> Int {
         let hostPort = UserDefaults.standard.integer(forKey: Preferences.hostPortKey)
-        return (hostPort == 0) ? 80 : hostPort
+        return (hostPort == 0) ? DEFAULT_PORT : hostPort
     }
 
     static func getRequestProtocol() -> String {

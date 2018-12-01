@@ -33,6 +33,11 @@
                         <action selector="refreshMenuItemActionHandler:" target="Kpj-0Y-3ml" id="dMu-4s-RsP"/>
                     </connections>
                 </menuItem>
+                <menuItem title="Open Dashboard" keyEquivalent="d" id="tfV-hR-KJg" userLabel="Dashboard Menu Item">
+                    <connections>
+                        <action selector="dashboardMenuItemActionHandler:" target="Kpj-0Y-3ml" id="i6w-q4-YOR"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="yOe-Fc-X4s"/>
                 <menuItem title="Enable filter" id="gul-jW-7CU">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -107,11 +112,6 @@
                 <menuItem title="Updates ..." keyEquivalent="u" id="jhA-32-tko">
                     <connections>
                         <action selector="checkForUpdates:" target="4iD-pF-B1g" id="Fyc-S6-sxt"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Dashboard ..." keyEquivalent="d" id="tfV-hR-KJg" userLabel="Dashboard Menu Item">
-                    <connections>
-                        <action selector="dashboardMenuItemActionHandler:" target="Kpj-0Y-3ml" id="i6w-q4-YOR"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Preferences …" keyEquivalent="," id="BOF-NM-1cW">

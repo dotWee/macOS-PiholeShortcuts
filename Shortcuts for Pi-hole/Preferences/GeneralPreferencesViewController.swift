@@ -86,6 +86,9 @@ final class GeneralPreferencesViewController: NSViewController {
         if !apiKey.isEmpty {
             secureTextFieldApiKey.stringValue = apiKey
         }
+        
+        let timeout = Preferences.getTimeout()
+        textFieldTimeout.integerValue = timeout
 
         // check status
         self.onPreferencesChange()

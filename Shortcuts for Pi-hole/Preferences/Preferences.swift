@@ -11,6 +11,8 @@ import Cocoa
 struct Preferences {
     static let (hostAddressKey, hostPortKey, requestProtocolKey, apiKey, timeoutKey) = ("HOST_ADDRESS", "HOST_PORT", "REQUEST_PROTOCOL", "API_KEY", "REQUEST_TIMEOUT")
     static let userSessionKey = Bundle.main.bundleIdentifier!
+    
+    static let DEFAULT_TIMEOUT = 1
 
     struct Model {
         var hostAddress: String?
@@ -82,7 +84,8 @@ struct Preferences {
     }
 
     static func getTimeout() -> Int {
-        return UserDefaults.standard.integer(forKey: Preferences.timeoutKey)
+        let timeout = UserDefaults.standard.integer(forKey: Preferences.timeoutKey)
+        return timeout <= 0 ? DEFAULT_TIMEOUT : timeout
     }
 
     static func saveHostAddress(hostAddress: String) {

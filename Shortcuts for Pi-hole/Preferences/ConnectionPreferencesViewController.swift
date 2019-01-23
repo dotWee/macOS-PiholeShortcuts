@@ -72,7 +72,7 @@ class ConnectionPreferencesViewController: NSViewController {
         if self.displayBuiltUrl() {
             displayStatus(status: "Requesting...", color: PiHoleConnectionResult.colorResultNeutral)
             
-            PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status) in
+            PiHoleProxy.performActionRequest(PiHoleAction.Status, onSuccess: { (status, responseObj) in
                 DispatchQueue.main.async {
                     self.displayStatus(status: "Connection established", color: PiHoleConnectionResult.colorResultPositive, log: "Pi-hole status: \(status)")
                 }

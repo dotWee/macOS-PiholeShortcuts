@@ -77,7 +77,7 @@ class MainMenuController: NSObject, NSMenuDelegate {
         if PiHoleProxy.getConfigStatus().isPositive() {
             self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: Requesting...")
             
-            PiHoleProxy.performActionRequest(action, seconds: seconds, onSuccess: { (status) in
+            PiHoleProxy.performActionRequest(action, seconds: seconds, onSuccess: { status, responseDict  in
                 self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: " + status)
             }) { (error) in self.dispatchStatusMenuItemUpdate(withTitle: "Error: No connection.") }
         } else {

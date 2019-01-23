@@ -90,7 +90,7 @@ class PiHoleProxy: NSObject {
         return URLSession(configuration: config)
     }
 
-    public static func performActionRequest(_ action: PiHoleAction, seconds: Int = 0, onSuccess success: @escaping (_ status: String) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
+    public static func performActionRequest(_ action: PiHoleAction, seconds: Int = 0, onSuccess success: @escaping (_ status: String, _ responseDict: [String : Any]) -> Void, onFailure failure: @escaping (_ error: NSError) -> Void) {
 
         do {
             guard let url = getApiUrl(action: action, seconds: seconds) else {
@@ -118,19 +118,19 @@ class PiHoleProxy: NSObject {
 
                 // Parse the result as JSON, since that's what the API provides
                 do {
-                    guard let responseObj = try JSONSerialization.jsonObject(with: responseData, options: [])
+                    guard let responseDict = try JSONSerialization.jsonObject(with: responseData, options: [])
                     as? [String: Any] else {
-                        failure(NSError(domain: "Error converting response to JSON", code: 4, userInfo: nil))
+                        failure(NSError(domain: "Error converting response to JSON dictionary", code: 4, userInfo: nil))
                         return
                     }
 
                     // The response object is a dictionary so we just access the title using the "status" key
-                    guard let status = responseObj["status"] as? String else {
+                    guard let status = responseDict["status"] as? String else {
                         failure(NSError(domain: "Error getting status from response", code: 5, userInfo: nil))
                         return
                     }
 
-                    success(status)
+                    success(status, responseDict)
                 } catch {
                     failure(NSError(domain: "Error at converting response into JSON", code: 6, userInfo: nil))
                     return

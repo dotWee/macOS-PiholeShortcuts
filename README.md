@@ -2,11 +2,27 @@
 
 Shortcuts for Pi-hole is a small menu bar application that lives in your status bar. It provides quick actions for managing and monitoring your Pi-hole® instance.
 
-<img src="Screenshots/Overview.png"/>
+<table>
+<tr>
+<th>General Preferences</th>
+<th>Connection Preferences</th>
+</tr>
 
-General Preferences     |  Connection Preferences
-:-------------------------:|:-------------------------:
-<img src="Screenshots/GeneralPreferences.png"/>  |  <img src="Screenshots/ConnectionPreferences.png"/>
+<tr>
+<td><img src="Screenshots/GeneralPreferences.png"/></td>
+<td><img src="Screenshots/ConnectionPreferences.png"/></td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>About</th>
+</tr>
+
+<tr>
+<td><img src="Screenshots/Overview.png"/></td>
+</tr>
+</table>
 
 ## Things to complete
 

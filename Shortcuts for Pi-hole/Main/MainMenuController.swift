@@ -75,10 +75,10 @@ class MainMenuController: NSObject, NSMenuDelegate {
     
     func performPiHoleAction(action: PiHoleAction, seconds: Int = 0) {
         if PiHoleProxy.getConfigStatus().isPositive() {
-            self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: Requesting...")
+            self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole: Requesting...")
             
             PiHoleProxy.performActionRequest(action, seconds: seconds, onSuccess: { status, responseDict  in
-                self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole Status: " + status)
+                self.dispatchStatusMenuItemUpdate(withTitle: "Pi-hole: " + status.firstCapitalized)
             }) { (error) in self.dispatchStatusMenuItemUpdate(withTitle: "Error: No connection.") }
         } else {
             self.dispatchStatusMenuItemUpdate(withTitle: "Error: Configuration invalid.")

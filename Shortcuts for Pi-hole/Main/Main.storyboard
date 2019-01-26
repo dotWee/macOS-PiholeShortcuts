@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kx9-pV-kLt">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kx9-pV-kLt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -64,7 +64,7 @@
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gi0-NV-hi4">
                                 <rect key="frame" x="18" y="324" width="294" height="18"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Required Pi-hole preferences " id="oyI-EZ-n1v">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Required preferences " id="oyI-EZ-n1v">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -180,7 +180,7 @@
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UDF-Hx-30q">
                                 <rect key="frame" x="18" y="173" width="294" height="18"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Optional preferences for API requests" id="tdA-5J-XqF">
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Optional preferences" id="tdA-5J-XqF">
                                     <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -333,7 +333,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1012" y="559"/>
+            <point key="canvasLocation" x="987" y="558"/>
         </scene>
         <!--Connection View Controller-->
         <scene sceneID="yXD-A3-jER">
@@ -341,64 +341,9 @@
                 <customObject id="CIJ-Rs-52H" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController title="Connection Preferences" id="keW-xg-6Mf" userLabel="Connection View Controller" customClass="ConnectionPreferencesViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="4Vt-JH-THD">
-                        <rect key="frame" x="0.0" y="0.0" width="330" height="360"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="359"/>
                         <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="piL-za-ZqG">
-                                <rect key="frame" x="18" y="322" width="294" height="18"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Example request URL on API " id="BHq-cz-zGR">
-                                    <font key="font" metaFont="system" size="14"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <box title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="oN7-NB-Ixd">
-                                <rect key="frame" x="17" y="272" width="296" height="44"/>
-                                <view key="contentView" id="YCs-FU-BAa">
-                                    <rect key="frame" x="3" y="3" width="290" height="38"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Rfn-ib-c11" userLabel="Example request url">
-                                            <rect key="frame" x="8" y="8" width="274" height="22"/>
-                                            <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="5qq-RQ-3eK">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            </textFieldCell>
-                                            <connections>
-                                                <action selector="exampleRequestUrlTextField:" target="keW-xg-6Mf" id="GZr-Uw-C3A"/>
-                                            </connections>
-                                        </textField>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="Rfn-ib-c11" secondAttribute="bottom" constant="8" id="HJy-hV-g3O"/>
-                                        <constraint firstItem="Rfn-ib-c11" firstAttribute="top" secondItem="YCs-FU-BAa" secondAttribute="top" constant="8" id="Jro-x8-MKq"/>
-                                        <constraint firstItem="Rfn-ib-c11" firstAttribute="leading" secondItem="YCs-FU-BAa" secondAttribute="leading" constant="8" id="Q27-hV-Jng"/>
-                                        <constraint firstAttribute="trailing" secondItem="Rfn-ib-c11" secondAttribute="trailing" constant="8" id="ndr-aF-G9d"/>
-                                    </constraints>
-                                </view>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="290" id="wVe-lM-NLa"/>
-                                </constraints>
-                            </box>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Vc-Ybx">
-                                <rect key="frame" x="18" y="238" width="294" height="18"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Test connection log" id="TGd-wp-jVY">
-                                    <font key="font" metaFont="system" size="14"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Dt-dO-Ie4">
-                                <rect key="frame" x="224" y="62" width="92" height="32"/>
-                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EiH-Gq-9CD">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="connectionButtonActionHandler:" target="keW-xg-6Mf" id="txF-7p-Rvj"/>
-                                </connections>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rS1-FB-HMO">
                                 <rect key="frame" x="18" y="13" width="47" height="18"/>
                                 <constraints>
@@ -411,14 +356,14 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="m2Z-8d-KKv" customClass="ColoredStatusView" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target">
-                                <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                <rect key="frame" x="335" y="12" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="MDL-Pm-jQI"/>
                                     <constraint firstAttribute="height" constant="20" id="OTG-m4-PqF"/>
                                 </constraints>
                             </customView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yjg-WU-rPj" userLabel="Connection Status">
-                                <rect key="frame" x="186" y="13" width="98" height="18"/>
+                                <rect key="frame" x="231" y="13" width="98" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="Hbd-c7-16n"/>
                                 </constraints>
@@ -429,73 +374,132 @@
                                 </textFieldCell>
                             </textField>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xkm-vF-WcE">
-                                <rect key="frame" x="10" y="42" width="310" height="5"/>
+                                <rect key="frame" x="10" y="42" width="355" height="5"/>
                             </box>
-                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-nc-8BG" userLabel="Connection Log">
-                                <rect key="frame" x="20" y="110" width="290" height="120"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jfh-Vc-Ybx" userLabel="Api response label">
+                                <rect key="frame" x="18" y="256" width="339" height="18"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Full API response" id="TGd-wp-jVY">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <box titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="LQJ-I5-oxo">
+                                <rect key="frame" x="17" y="290" width="341" height="51"/>
+                                <view key="contentView" id="M7M-KL-Obw">
+                                    <rect key="frame" x="3" y="3" width="335" height="45"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <gridView xPlacement="leading" yPlacement="bottom" rowAlignment="none" translatesAutoresizingMaskIntoConstraints="NO" id="LO5-pd-yeA">
+                                            <rect key="frame" x="20" y="12" width="295" height="21"/>
+                                            <rows>
+                                                <gridRow yPlacement="center" id="cOZ-v6-1t7"/>
+                                            </rows>
+                                            <columns>
+                                                <gridColumn xPlacement="trailing" width="70" id="mTe-Ka-c9o"/>
+                                                <gridColumn id="qUX-iX-4Ks"/>
+                                                <gridColumn xPlacement="fill" id="ajI-hI-yfg"/>
+                                            </columns>
+                                            <gridCells>
+                                                <gridCell row="cOZ-v6-1t7" column="mTe-Ka-c9o" id="e70-x3-uC0">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7eV-iN-y9E">
+                                                        <rect key="frame" x="25" y="2" width="47" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Status:" id="Mib-sM-MQ8">
+                                                            <font key="font" usesAppearanceFont="YES"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="cOZ-v6-1t7" column="qUX-iX-4Ks" id="NWX-HX-934">
+                                                    <textField key="contentView" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZOD-tf-mCL">
+                                                        <rect key="frame" x="74" y="2" width="104" height="17"/>
+                                                        <textFieldCell key="cell" lineBreakMode="clipping" id="pep-j3-aQN">
+                                                            <font key="font" metaFont="systemBold"/>
+                                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                        </textFieldCell>
+                                                    </textField>
+                                                </gridCell>
+                                                <gridCell row="cOZ-v6-1t7" column="ajI-hI-yfg" id="CCg-Lm-Veq">
+                                                    <button key="contentView" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5Dt-dO-Ie4">
+                                                        <rect key="frame" x="216" y="-7" width="85" height="32"/>
+                                                        <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EiH-Gq-9CD">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="updateButtonActionHandler:" target="keW-xg-6Mf" id="BHr-bY-vdi"/>
+                                                        </connections>
+                                                    </button>
+                                                </gridCell>
+                                            </gridCells>
+                                        </gridView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="LO5-pd-yeA" secondAttribute="trailing" constant="20" id="KKJ-3P-ZZy"/>
+                                        <constraint firstItem="LO5-pd-yeA" firstAttribute="leading" secondItem="M7M-KL-Obw" secondAttribute="leading" constant="20" id="cQ2-hA-kTM"/>
+                                        <constraint firstItem="LO5-pd-yeA" firstAttribute="top" secondItem="M7M-KL-Obw" secondAttribute="top" constant="12" id="kH6-mP-PHu"/>
+                                        <constraint firstAttribute="bottom" secondItem="LO5-pd-yeA" secondAttribute="bottom" constant="12" id="l5J-kJ-H9K"/>
+                                    </constraints>
+                                </view>
+                            </box>
+                            <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuL-nc-8BG" userLabel="Api response view">
+                                <rect key="frame" x="20" y="65" width="335" height="183"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="NmB-2S-dwb">
-                                    <rect key="frame" x="1" y="1" width="273" height="118"/>
+                                    <rect key="frame" x="1" y="1" width="333" height="181"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="fvQ-Yr-swL">
-                                            <rect key="frame" x="0.0" y="0.0" width="273" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="333" height="181"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="273" height="118"/>
+                                            <size key="minSize" width="333" height="181"/>
                                             <size key="maxSize" width="367" height="10000000"/>
                                             <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
                                     </subviews>
                                 </clipView>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="9pE-fF-BbA"/>
-                                    <constraint firstAttribute="width" constant="290" id="w9s-Io-phQ"/>
-                                </constraints>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" horizontal="NO" id="rVj-p0-YFy">
-                                    <rect key="frame" x="274" y="1" width="15" height="118"/>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="rVj-p0-YFy">
+                                    <rect key="frame" x="318" y="1" width="16" height="181"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="xkm-vF-WcE" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="10" id="3VP-pG-Pzc"/>
-                            <constraint firstAttribute="trailing" secondItem="jfh-Vc-Ybx" secondAttribute="trailing" constant="20" id="3tU-oL-f8Z"/>
-                            <constraint firstAttribute="trailing" secondItem="KuL-nc-8BG" secondAttribute="trailing" constant="20" id="Agu-5R-iBa"/>
-                            <constraint firstItem="oN7-NB-Ixd" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="Avc-yf-TEJ"/>
+                            <constraint firstItem="jfh-Vc-Ybx" firstAttribute="top" secondItem="LQJ-I5-oxo" secondAttribute="bottom" constant="20" id="8y9-tj-FfI"/>
                             <constraint firstItem="rS1-FB-HMO" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="13" id="Ccz-DX-uEf"/>
+                            <constraint firstAttribute="trailing" secondItem="jfh-Vc-Ybx" secondAttribute="trailing" constant="20" id="Cib-dv-8rR"/>
                             <constraint firstItem="Yjg-WU-rPj" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="13" id="EEd-Gc-4Ue"/>
-                            <constraint firstItem="KuL-nc-8BG" firstAttribute="top" secondItem="jfh-Vc-Ybx" secondAttribute="bottom" constant="8" id="HGY-wS-WMR"/>
+                            <constraint firstItem="xkm-vF-WcE" firstAttribute="top" secondItem="KuL-nc-8BG" secondAttribute="bottom" constant="20" id="F9e-as-L4Y"/>
                             <constraint firstAttribute="bottom" secondItem="Yjg-WU-rPj" secondAttribute="bottom" constant="13" id="Hlc-Y6-KhX"/>
+                            <constraint firstItem="KuL-nc-8BG" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="IDT-hQ-YBo"/>
                             <constraint firstItem="rS1-FB-HMO" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="JkR-t7-fgG"/>
                             <constraint firstAttribute="trailing" secondItem="xkm-vF-WcE" secondAttribute="trailing" constant="10" id="KeV-44-75O"/>
-                            <constraint firstItem="piL-za-ZqG" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="RHT-On-xPB"/>
-                            <constraint firstAttribute="trailing" secondItem="5Dt-dO-Ie4" secondAttribute="trailing" constant="20" id="T14-Lu-bjJ"/>
-                            <constraint firstItem="jfh-Vc-Ybx" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="Twx-aq-ad9"/>
+                            <constraint firstItem="LQJ-I5-oxo" firstAttribute="top" secondItem="4Vt-JH-THD" secondAttribute="top" constant="20" id="NnX-Mt-wsz"/>
+                            <constraint firstAttribute="trailing" secondItem="KuL-nc-8BG" secondAttribute="trailing" constant="20" id="Nrs-GC-acD"/>
+                            <constraint firstItem="LQJ-I5-oxo" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="Nwc-xp-Rx0"/>
+                            <constraint firstItem="jfh-Vc-Ybx" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="S0w-dk-Vdn"/>
                             <constraint firstItem="m2Z-8d-KKv" firstAttribute="leading" secondItem="Yjg-WU-rPj" secondAttribute="trailing" constant="8" id="VEn-xt-Qna"/>
                             <constraint firstAttribute="trailing" secondItem="m2Z-8d-KKv" secondAttribute="trailing" constant="20" id="VId-of-FQH"/>
-                            <constraint firstItem="xkm-vF-WcE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5Dt-dO-Ie4" secondAttribute="bottom" constant="20" id="ZUG-TE-Qr6"/>
-                            <constraint firstItem="5Dt-dO-Ie4" firstAttribute="top" secondItem="KuL-nc-8BG" secondAttribute="bottom" constant="20" id="fIe-tE-CgO"/>
-                            <constraint firstItem="jfh-Vc-Ybx" firstAttribute="top" secondItem="oN7-NB-Ixd" secondAttribute="bottom" constant="20" id="fd8-SE-xZE"/>
-                            <constraint firstItem="piL-za-ZqG" firstAttribute="top" secondItem="4Vt-JH-THD" secondAttribute="top" constant="20" id="hO8-vk-7M8"/>
-                            <constraint firstAttribute="trailing" secondItem="piL-za-ZqG" secondAttribute="trailing" constant="20" id="iT8-Kn-A1E"/>
+                            <constraint firstAttribute="trailing" secondItem="LQJ-I5-oxo" secondAttribute="trailing" constant="20" id="WdH-ac-Fl6"/>
+                            <constraint firstItem="KuL-nc-8BG" firstAttribute="top" secondItem="jfh-Vc-Ybx" secondAttribute="bottom" constant="8" id="khs-rg-9Kj"/>
                             <constraint firstAttribute="bottom" secondItem="rS1-FB-HMO" secondAttribute="bottom" constant="13" id="o9R-Gw-6BG"/>
-                            <constraint firstItem="oN7-NB-Ixd" firstAttribute="top" secondItem="piL-za-ZqG" secondAttribute="bottom" constant="8" id="p7l-AG-kiz"/>
-                            <constraint firstItem="KuL-nc-8BG" firstAttribute="leading" secondItem="4Vt-JH-THD" secondAttribute="leading" constant="20" id="qO8-vU-ds0"/>
                             <constraint firstAttribute="bottom" secondItem="m2Z-8d-KKv" secondAttribute="bottom" constant="12" id="rSS-ul-9od"/>
-                            <constraint firstAttribute="trailing" secondItem="oN7-NB-Ixd" secondAttribute="trailing" constant="20" id="snL-QB-FOZ"/>
                             <constraint firstItem="m2Z-8d-KKv" firstAttribute="top" secondItem="xkm-vF-WcE" secondAttribute="bottom" constant="12" id="ydL-FW-UJu"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="apiResponseTextView" destination="fvQ-Yr-swL" id="vHd-Cs-NGh"/>
                         <outlet property="coloredStatusViewOutlet" destination="m2Z-8d-KKv" id="WlW-lO-ug0"/>
-                        <outlet property="connectionLogTextView" destination="fvQ-Yr-swL" id="vHd-Cs-NGh"/>
                         <outlet property="connectionStatusTextField" destination="Yjg-WU-rPj" id="zjX-m7-tY4"/>
-                        <outlet property="urlTextField" destination="Rfn-ib-c11" id="O4S-4Q-hGa"/>
+                        <outlet property="statusValueTextField" destination="ZOD-tf-mCL" id="mDJ-0C-aLj"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1375" y="559"/>
+            <point key="canvasLocation" x="1359" y="559"/>
         </scene>
         <!--About Window Controller-->
         <scene sceneID="saf-uF-BMD">
@@ -665,12 +669,12 @@ It provides quick actions for managing and monitoring your Pi-hole® instance.</
                 <customObject id="L9K-Vz-JLr" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <customObject id="iJZ-88-fHD" customClass="AboutViewController" customModule="Shortcuts_for_Pi_hole" customModuleProvider="target"/>
             </objects>
-            <point key="canvasLocation" x="1836" y="535"/>
+            <point key="canvasLocation" x="1836" y="544"/>
         </scene>
     </scenes>
     <resources>
-        <image name="NSApplicationIcon" width="128" height="128"/>
-        <image name="NSNetwork" width="128" height="128"/>
-        <image name="NSPreferencesGeneral" width="128" height="128"/>
+        <image name="NSApplicationIcon" width="32" height="32"/>
+        <image name="NSNetwork" width="32" height="32"/>
+        <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>
 </document>

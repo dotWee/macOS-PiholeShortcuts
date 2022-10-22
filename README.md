@@ -1,3 +1,7 @@
+> **_DISCONTINUED_**, as i don't use Pi-hole anymore <sup>(and this application never matured from POC state)</sup>
+>
+> If you're looking for a gread Pi-hole Remote on macOS & iOS - check out [Pi-hole Remote](https://rocketscience-it.nl)
+
 # Shortcuts for Pi-hole
 
 Shortcuts for Pi-hole is a small menu bar application that lives in your status bar. It provides quick actions for managing and monitoring your Pi-hole® instance.
